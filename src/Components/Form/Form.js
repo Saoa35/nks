@@ -12,11 +12,11 @@ class Form extends React.Component {
         super(props);
         this.handleChangeFN = this.handleChangeFN.bind(this);
         this.handleChangeLN = this.handleChangeLN.bind(this);
+        this.handleChangeBD = this.handleChangeBD.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleChangeFN(e) {
-
         const firstName = e.target.value
         this.setState({
             firstName
@@ -24,10 +24,16 @@ class Form extends React.Component {
     }
 
     handleChangeLN(e) {
-
         const lastName = e.target.value
         this.setState({
             lastName
+        })
+    }
+
+    handleChangeBD(e) {
+        const birthData = e.target.value
+        this.setState({
+            birthData
         })
     }
 
@@ -53,7 +59,7 @@ class Form extends React.Component {
                     </p>
                     <p>
                     <label>Date of birth</label>
-                    <input type='date' value={this.state.value} onChange={this.handleChange}></input>
+                    <input type='date' value={this.state.birthData} onChange={this.handleChangeBD}></input>
                     </p>
                     <p className='submitButton'>
                         <button>
