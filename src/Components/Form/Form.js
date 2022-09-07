@@ -10,30 +10,14 @@ class Form extends React.Component {
 
     constructor(props) {
         super(props);
-        this.handleChangeFN = this.handleChangeFN.bind(this);
-        this.handleChangeLN = this.handleChangeLN.bind(this);
-        this.handleChangeBD = this.handleChangeBD.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChangeFN(e) {
-        const firstName = e.target.value
+    handleChange(e) {
+        const { name, value } = e.target;
         this.setState({
-            firstName
-        })
-    }
-
-    handleChangeLN(e) {
-        const lastName = e.target.value
-        this.setState({
-            lastName
-        })
-    }
-
-    handleChangeBD(e) {
-        const birthData = e.target.value
-        this.setState({
-            birthData
+            [name]: value
         })
     }
 
@@ -51,15 +35,15 @@ class Form extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <p>
                     <label>First Name</label>
-                    <input type='text' value={this.state.firstName} onChange={this.handleChangeFN}></input>
+                    <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}></input>
                     </p>
                     <p>
                     <label>Last Name</label>
-                    <input type='text' value={this.state.lastName} onChange={this.handleChangeLN}></input>
+                    <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange}></input>
                     </p>
                     <p>
                     <label>Date of birth</label>
-                    <input type='date' value={this.state.birthData} onChange={this.handleChangeBD}></input>
+                    <input type='date' name='birthData' value={this.state.birthData} onChange={this.handleChange}></input>
                     </p>
                     <p className='submitButton'>
                         <button>
