@@ -3,27 +3,37 @@ import React from 'react'
 class Form extends React.Component {
 
     state = {
-        value: '',
+        firstName: '',
+        lastName: '',
+        birthData: ''
     }
 
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeFN = this.handleChangeFN.bind(this);
+        this.handleChangeLN = this.handleChangeLN.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(e) {
+    handleChangeFN(e) {
 
-        const value = e.target.value
+        const firstName = e.target.value
         this.setState({
-            value
+            firstName
+        })
+    }
+
+    handleChangeLN(e) {
+
+        const lastName = e.target.value
+        this.setState({
+            lastName
         })
     }
 
     handleSubmit(e) {
-
         e.preventDefault();
-        console.log(this.state.value);
+        console.log(this.state);
     }
     
 
@@ -35,11 +45,11 @@ class Form extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <p>
                     <label>First Name</label>
-                    <input type='text' value={this.state.value} onChange={this.handleChange}></input>
+                    <input type='text' value={this.state.firstName} onChange={this.handleChangeFN}></input>
                     </p>
                     <p>
                     <label>Last Name</label>
-                    <input type='text' value={this.state.value} onChange={this.handleChange}></input>
+                    <input type='text' value={this.state.lastName} onChange={this.handleChangeLN}></input>
                     </p>
                     <p>
                     <label>Date of birth</label>
