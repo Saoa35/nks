@@ -5,6 +5,10 @@
   margin-top: 50px;
 }
 
+.submitButton {
+  text-align: center;
+}
+
 label {
   margin-right: 20px;
 }
