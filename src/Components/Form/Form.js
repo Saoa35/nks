@@ -31,9 +31,9 @@ class Form extends React.Component {
 
         return(
 
-            <div>
+            <div className='create-user-wrapper'>
                 <header className='create-user-header'>
-                    
+
                 </header>
 
                 <div>
