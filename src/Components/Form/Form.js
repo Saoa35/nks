@@ -38,18 +38,13 @@ class Form extends React.Component {
 
                 <div>
                 <form onSubmit={this.handleSubmit}>
-                    <p>
-                    <label>First Name</label>
+                    
                     <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}></input>
-                    </p>
-                    <p>
-                    <label>Last Name</label>
+                    
                     <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange}></input>
-                    </p>
-                    <p>
-                    <label>Date of birth</label>
+                    
                     <input type='date' name='birthData' value={this.state.birthData} onChange={this.handleChange}></input>
-                    </p>
+
                     <p className='submitButton'>
                         <button>
                             Submit
