@@ -32,6 +32,11 @@ class Form extends React.Component {
         return(
 
             <div>
+                <header className='create-user-header'>
+                    
+                </header>
+
+                <div>
                 <form onSubmit={this.handleSubmit}>
                     <p>
                     <label>First Name</label>
@@ -51,6 +56,7 @@ class Form extends React.Component {
                         </button>
                     </p>
                 </form>
+            </div>
             </div>
             
         )
