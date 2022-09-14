@@ -38,7 +38,7 @@ class Form extends React.Component {
 
           <div className='create-user-wrapper'>
             <div className='create-user-header'>
-              <p className='foto'>Build</p>
+              <p className='foto'><span>Build</span></p>
             </div>
             <form onSubmit={this.handleSubmit}>  
               <input type='text' name='surName' placeholder='Surname' value={this.state.surName} onChange={this.handleChange}></input>
