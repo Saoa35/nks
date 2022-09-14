@@ -37,15 +37,12 @@ class Form extends React.Component {
             <div className='create-user-wrapper'>
                 
 
-                <div>
-                <form onSubmit={this.handleSubmit}>
-                    
+                <form onSubmit={this.handleSubmit}>  
                   <input type='text' name='surName' placeholder='Surname' value={this.state.surName} onChange={this.handleChange}></input>
-                  <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}></input>
-                  <input type='text' name='userName' value={this.state.userName} onChange={this.handleChange}></input>
-                  <input type='email' name='email' value={this.state.email} onChange={this.handleChange}></input>
+                  <input type='text' name='firstName' placeholder='Firstname' value={this.state.firstName} onChange={this.handleChange}></input>
+                  <input type='text' name='userName' placeholder='Username' value={this.state.userName} onChange={this.handleChange}></input>
+                  <input type='email' name='email' placeholder='Email adress' value={this.state.email} onChange={this.handleChange}></input>
                 </form>
-            </div>
             </div>
             
         )

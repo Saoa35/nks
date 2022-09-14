@@ -5,12 +5,13 @@
   margin-top: 50px;
 }
 
-.submitButton {
-  text-align: center;
-}
-
 .create-user-wrapper {
   width: 700px;
   height: 100%;
   background-color: white;
+}
+
+input {
+  height: 3vh;
+  width: 45%;
 }
