@@ -5,7 +5,7 @@ class Form extends React.Component {
     state = {
         firstName: '',
         lastName: '',
-        birthData: ''
+        userName: ''
     }
 
     constructor(props) {
@@ -32,18 +32,14 @@ class Form extends React.Component {
         return(
 
             <div className='create-user-wrapper'>
-                <header className='create-user-header'>
-
-                </header>
+                
 
                 <div>
                 <form onSubmit={this.handleSubmit}>
                     
-                    <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}></input>
-                    
-                    <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange}></input>
-                    
-                    <input type='date' name='birthData' value={this.state.birthData} onChange={this.handleChange}></input>
+                  <input type='text' name='firstName' placeholder='Surname' value={this.state.firstName} onChange={this.handleChange}></input>
+                  <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange}></input>
+                  <input type='text' name='userName' value={this.state.userName} onChange={this.handleChange}></input>
 
                     <p className='submitButton'>
                         <button>
