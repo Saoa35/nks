@@ -3,9 +3,12 @@ import React from 'react'
 class Form extends React.Component {
 
     state = {
+        surName: '',
         firstName: '',
-        lastName: '',
-        userName: ''
+        userName: '',
+        email:'',
+
+
     }
 
     constructor(props) {
@@ -37,15 +40,10 @@ class Form extends React.Component {
                 <div>
                 <form onSubmit={this.handleSubmit}>
                     
-                  <input type='text' name='firstName' placeholder='Surname' value={this.state.firstName} onChange={this.handleChange}></input>
-                  <input type='text' name='lastName' value={this.state.lastName} onChange={this.handleChange}></input>
+                  <input type='text' name='surName' placeholder='Surname' value={this.state.surName} onChange={this.handleChange}></input>
+                  <input type='text' name='firstName' value={this.state.firstName} onChange={this.handleChange}></input>
                   <input type='text' name='userName' value={this.state.userName} onChange={this.handleChange}></input>
-
-                    <p className='submitButton'>
-                        <button>
-                            Submit
-                        </button>
-                    </p>
+                  <input type='email' name='email' value={this.state.email} onChange={this.handleChange}></input>
                 </form>
             </div>
             </div>
