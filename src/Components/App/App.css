@@ -52,3 +52,9 @@ select {
   border-radius: 5px;
   border-color: rgb(163, 156, 156);
 }
+
+.checkboxDiv {
+  display: block;
+  width: 87%;
+  /* height: 8px; */
+}
