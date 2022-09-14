@@ -7,8 +7,10 @@ class Form extends React.Component {
       firstName: '',
       userName: '',
       email:'',
-      realm: 'lbbwImmo'
-
+      realm: 'lbbwImmo',
+      password: '',
+      confirmPas:'',
+      checkbox: false
     }
 
     constructor(props) {
@@ -38,17 +40,27 @@ class Form extends React.Component {
 
         <div className='create-user-wrapper'>
           <div className='create-user-header'>
-            <p className='foto'><span>Build</span></p>
+            <p className='foto'><span>Bild</span></p>
           </div>
           <form onSubmit={this.handleSubmit}>  
-            <input type='text' name='surName' placeholder='Surname' value={this.state.surName} onChange={this.handleChange}></input>
-            <input type='text' name='firstName' placeholder='Firstname' value={this.state.firstName} onChange={this.handleChange}></input>
-            <input type='text' name='userName' placeholder='Username' value={this.state.userName} onChange={this.handleChange}></input>
-            <input type='email' name='email' placeholder='Email adress' value={this.state.email} onChange={this.handleChange}></input>
+            <input type='text' name='surName' placeholder='Surname' value={this.state.surName} onChange={this.handleChange}/>
+            <input type='text' name='firstName' placeholder='Firstname' value={this.state.firstName} onChange={this.handleChange}/>
+            <input type='text' name='userName' placeholder='Username' value={this.state.userName} onChange={this.handleChange}/>
+            <input type='email' name='email' placeholder='Email adress' value={this.state.email} onChange={this.handleChange}/>
             
             <select name='realm' placeholder='Realm' value={this.state.realm} onChange={this.handleChange}>
               <option value='lbbwImmo'>LBBW Immo</option>
             </select>
+
+           
+            <p style={{width:'86%', marginTop:'25px', fontWeight: 'bold'}}>Password</p>
+            <input type='password' name='password' placeholder='Password' style={{marginTop:'0'}} value={this.state.password} onChange={this.handleChange}/>
+            <input type='password' name='confirmPas' placeholder='Confirm Password' style={{marginTop:'0'}} value={this.state.confirmPas} onChange={this.handleChange}/>
+            
+            <p>
+              <input type='checkbox' name='checkbox' value={this.state.checkbox}/> 
+              <span>Temporary Password</span>
+            </p>
           </form>
         </div>
           
