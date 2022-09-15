@@ -20,9 +20,11 @@ class Form extends React.Component {
     }
 
     handleChange(e) {
-      const { name, value } = e.target;
+      const { type, checked, name, value } = e.target;
+      const currValue = type ==='checkbox' ? checked : value;
+
       this.setState({
-          [name]: value
+          [name]: currValue
       })
     }
 
@@ -58,11 +60,11 @@ class Form extends React.Component {
             <input type='password' name='confirmPas' placeholder='Confirm Password' style={{marginTop:'0'}} value={this.state.confirmPas} onChange={this.handleChange}/>
             
             <div className='checkbox-div'>
-              <input type='checkbox' name='checkbox' className='checkbox-input' style={{width:'20px', margin:'15px 10px 15px 0'}} value={this.state.checkbox}/> 
+              <input type='checkbox' name='checkbox' style={{width:'20px', margin:'15px 10px 15px 0'}} value={this.state.checkbox} onChange={this.handleChange}/> 
               <p style={{display:'inline-block'}}>Temporary Password</p>
             </div>
           </form>
-          <p><hr style={{width: '600px'}}/></p>
+          <div><hr style={{width: '600px'}}/></div>
         </div>
         
           
