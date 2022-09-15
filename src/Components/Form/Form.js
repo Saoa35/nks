@@ -57,12 +57,12 @@ class Form extends React.Component {
             <input type='password' name='password' placeholder='Password' style={{marginTop:'0'}} value={this.state.password} onChange={this.handleChange}/>
             <input type='password' name='confirmPas' placeholder='Confirm Password' style={{marginTop:'0'}} value={this.state.confirmPas} onChange={this.handleChange}/>
             
-            <div className='checkboxDiv'>
-              <input type='checkbox' name='checkbox' style={{width:'20px', margin:'15px 10px 15px 0'}} value={this.state.checkbox}/> 
+            <div className='checkbox-div'>
+              <input type='checkbox' name='checkbox' className='checkbox-input' style={{width:'20px', margin:'15px 10px 15px 0'}} value={this.state.checkbox}/> 
               <p style={{display:'inline-block'}}>Temporary Password</p>
             </div>
           </form>
-          <hr style={{width: '90%'}}/>
+          <p><hr style={{width: '600px'}}/></p>
         </div>
         
           
