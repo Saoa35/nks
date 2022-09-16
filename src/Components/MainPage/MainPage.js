@@ -19,11 +19,17 @@ export default class MainPage extends React.Component {
         </header>
 
         <main className='main_main'>
-          <aside className='main_aside'></aside>
+          <aside className='main_aside'>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </aside>
           <section className='main_section'>
             <div className='main_section_1'></div>
             <div className='main_section_2'>
-              
+
             </div>
           </section>
         </main>
