@@ -48,7 +48,7 @@ class Form extends React.Component {
 
       return(
 
-        <div className='create-user-wrapper'>
+        <div className='Form'>
           <div className='create-user-header'>
             <p className='foto'><span>Bild</span></p>
           </div>
