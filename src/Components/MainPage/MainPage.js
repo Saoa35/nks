@@ -27,14 +27,9 @@ export default class MainPage extends React.Component {
             </ul>
           </aside>
           <section className='main_section'>
-            <div className='main_section_1'></div>
-            <div className='main_section_2'>
-
-            </div>
+            <Form/>
           </section>
         </main>
-
-        {/* <Form/> */}
       </div>
     )
   }
