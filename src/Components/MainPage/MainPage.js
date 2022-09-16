@@ -10,10 +10,25 @@ export default class MainPage extends React.Component {
     return(
       <div className='MainPage'>
         <header className='main_header'>
-          <div className='user_management'>Usermanagement</div>
-          <div className='user_initials'></div>
+          <div className='user_management'>
+            <span>Usermanagement</span>
+          </div>
+          <div className='user_initials'>
+            <p>JH</p>
+          </div>
         </header>
-        <Form/>
+
+        <main className='main_main'>
+          <aside className='main_aside'></aside>
+          <section className='main_section'>
+            <div className='main_section_1'></div>
+            <div className='main_section_2'>
+              
+            </div>
+          </section>
+        </main>
+
+        {/* <Form/> */}
       </div>
     )
   }
