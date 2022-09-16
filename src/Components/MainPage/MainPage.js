@@ -8,6 +8,10 @@ export default class MainPage extends React.Component {
 
     return(
       <div>
+        <header className='main_header'>
+          <div></div>
+          <div></div>
+        </header>
         <Form/>
       </div>
     )

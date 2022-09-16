@@ -1,8 +1,12 @@
 .App {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin-top: 50px;
+}
+
+.MainPage {
+  
 }
 
 .create-user-wrapper {
