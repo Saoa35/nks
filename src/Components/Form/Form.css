@@ -1,0 +1,52 @@
+.Form {
+    width: 700px;
+    height: 100%;
+    background-color: white;
+  }
+  
+  .create-user-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100px;
+    background-color:rgb(212, 237, 237);
+  }
+  
+  .foto {
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    width: 80px;
+    height: 80px;
+    background-color:rgb(190, 189, 189);
+    color: white;
+    border-radius: 50px;
+    padding: 10px;
+  }
+  
+  form {
+    display: flex;
+    justify-content:space-around;
+    flex-wrap: wrap;
+  }
+  
+  input {
+    height: 4vh;
+    width: 250px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border-color: rgb(240, 235, 235);
+  }
+  
+  select {
+    height: 5vh;
+    width: 87%;
+    margin-top: 30px;
+    border-radius: 5px;
+    border-color: rgb(163, 156, 156);
+  }
+  
+  .checkbox-div {
+    display: block;
+    width: 87%;
+  }
