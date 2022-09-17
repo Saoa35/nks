@@ -11,7 +11,11 @@ class Form extends React.Component {
       realm: 'lbbwImmo',
       password: '',
       confirmPassword:'',
-      checkbox: false
+      checkbox: false,
+      formErrors: {password: '', confirmPassword: ''},
+      passwordValid: false,
+      confirmPasswordValid: false,
+      formValid: false
     }
 
     constructor(props) {
