@@ -10,7 +10,7 @@ class Form extends React.Component {
       email:'',
       realm: 'lbbwImmo',
       password: '',
-      confirmPas:'',
+      confirmPassword:'',
       checkbox: false
     }
 
@@ -25,23 +25,16 @@ class Form extends React.Component {
       const currValue = type ==='checkbox' ? checked : value;
 
       this.setState({
-          [name]: currValue,
+          [name]: currValue
       })
     }
+
 
     handleSubmit(e) {
       e.preventDefault();
       console.log(this.state);
     }
 
-    // componentDidMount() {
-      // {if(this.state.password.value !== this.state.confirmPas.value) {
-      //   alert('Введенный Вами пароль не совпадает с подтверждением!')
-        // console.log(this.state.password.value);
-      // }}
-      // console.log(this.state);
-    // }
-    
 
     render() {
 
@@ -104,10 +97,10 @@ class Form extends React.Component {
 
             <input 
               type='password' 
-              name='confirmPas' 
+              name='confirmPassword' 
               placeholder='Confirm Password' 
               style={{marginTop:'0'}} 
-              value={this.state.confirmPas} 
+              value={this.state.confirmPassword} 
               onChange={this.handleChange}
             />
             
