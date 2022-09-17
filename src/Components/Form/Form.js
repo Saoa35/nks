@@ -86,7 +86,7 @@ class Form extends React.Component {
               onChange={this.handleChange}
             />
             
-            <select name='realm' value={this.state.realm} onChange={this.handleChange}>
+            <select name='realm' value={this.state.realm} style={{width: '87%', borderColor: 'rgb(163, 156, 156)'}} onChange={this.handleChange}>
               <option value='lbbwImmo'>LBBW Immo</option>
             </select>
 
@@ -115,11 +115,10 @@ class Form extends React.Component {
               <input 
                 type='checkbox' 
                 name='checkbox' 
-                style={{width:'20px', margin:'15px 10px 15px 0'}} 
                 value={this.state.checkbox} 
                 onChange={this.handleChange}
               /> 
-              <p style={{display:'inline-block'}}>Temporary Password</p>
+              <p style={{display:'inline-block' }}>Temporary Password</p>
             </div>
 
             {/* <button>

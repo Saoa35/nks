@@ -30,7 +30,7 @@
     flex-wrap: wrap;
   }
   
-  input {
+  input, select {
     height: 4vh;
     width: 250px;
     margin-top: 30px;
@@ -38,15 +38,12 @@
     border-color: rgb(240, 235, 235);
   }
   
-  select {
-    height: 5vh;
-    width: 87%;
-    margin-top: 30px;
-    border-radius: 5px;
-    border-color: rgb(163, 156, 156);
-  }
-  
   .checkbox-div {
-    display: block;
     width: 87%;
+  }
+
+  .checkbox-div input {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
   }
