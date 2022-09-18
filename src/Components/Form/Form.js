@@ -12,7 +12,7 @@ class Form extends React.Component {
       realm: 'lbbwImmo',
       password: '',
       confirmPassword:'',
-      checkbox: false,
+      temporaryPassword: false,
       errors: ''
     }
 
@@ -131,11 +131,11 @@ class Form extends React.Component {
             <div className='checkbox-div'>
               <input 
                 type='checkbox' 
-                name='checkbox' 
-                value={this.state.checkbox} 
+                name='temporaryPassword' 
+                value={this.state.temporaryPassword} 
                 onChange={this.handleChange}
               /> 
-              <p style={{display:'inline-block' }}>Temporary Password</p>
+              <p>Temporary Password</p>
             </div>
             <div style={{width:'100%'}}><hr style={{width: '600px'}}/></div>
 

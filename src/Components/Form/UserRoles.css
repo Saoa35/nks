@@ -23,6 +23,29 @@
     display: flex;
 }
 
+.user_roles_list {
+    width: 50%;
+    list-style: none;
+}
+
+.major_li {
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.minor_div {
+    margin-left: 20px;
+}
+
+.minor_div p {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color:rgba(140, 184, 185, 0.407);
+    margin: 15px 10px 0 10px;
+}
+
 .selected_roles {
-    border-left: 2px solid rgb(187, 186, 186);
+    border-left: 2px solid rgb(222, 219, 219);
 }

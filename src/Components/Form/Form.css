@@ -61,10 +61,9 @@
     width: 87%;
   }
 
-  .checkbox-div input {
-    width: 15px;
-    height: 15px;
-    margin-right: 10px;
+  .checkbox-div p {
+    display: inline-block;
+    margin-left: 10px;
   }
 
   .error {
