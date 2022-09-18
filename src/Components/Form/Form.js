@@ -9,7 +9,7 @@ class Form extends React.Component {
       firstName: '',
       userName: '',
       email:'',
-      realm: 'lbbwImmo',
+      realm: '',
       password: '',
       confirmPassword:'',
       temporaryPassword: false,
