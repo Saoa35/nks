@@ -12,10 +12,7 @@ class Form extends React.Component {
       password: '',
       confirmPassword:'',
       checkbox: false,
-      formErrors: {password: '', confirmPassword: ''},
-      passwordValid: false,
-      confirmPasswordValid: false,
-      formValid: false
+      errors: ''
     }
 
     constructor(props) {
@@ -33,11 +30,15 @@ class Form extends React.Component {
       })
     }
 
-
     handleSubmit(e) {
       e.preventDefault();
-      console.log(this.state);
-    }
+
+      (this.state.password !== this.state.confirmPassword) 
+        ? this.setState({ errors: 'The password you entered does not match with the confirmation'})
+        : this.setState({ errors : ''});
+
+        console.log(this.state);
+      }
 
 
     render() {
@@ -83,10 +84,13 @@ class Form extends React.Component {
               onChange={this.handleChange}
             />
             
-            <select name='realm' value={this.state.realm} style={{width: '87%', borderColor: 'rgb(163, 156, 156)'}} onChange={this.handleChange}>
+            <select 
+              name='realm' 
+              value={this.state.realm} 
+              style={{width: '87%', borderColor: 'rgb(163, 156, 156)'}} 
+              onChange={this.handleChange}>
               <option value='lbbwImmo'>LBBW Immo</option>
             </select>
-
            
             <p style={{width:'86%', marginTop:'25px', fontWeight: 'bold'}}>Password</p>
 
@@ -107,6 +111,10 @@ class Form extends React.Component {
               value={this.state.confirmPassword} 
               onChange={this.handleChange}
             />
+
+            <div className="error">
+              {this.state.errors ? this.state.errors : ''}
+              </div>
             
             <div className='checkbox-div'>
               <input 
@@ -118,9 +126,9 @@ class Form extends React.Component {
               <p style={{display:'inline-block' }}>Temporary Password</p>
             </div>
 
-            {/* <button>
+            <button>
               Get state value
-            </button> */}
+            </button>
 
           </form>
           <div><hr style={{width: '600px'}}/></div>
