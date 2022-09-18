@@ -26,10 +26,12 @@ export default class MainPage extends React.Component {
               <li></li>
             </ul>
           </aside>
+          
           <section className='main_section'>
-            <div className='page_clasification'>
-              
-            </div>
+          <section className='page_classification'>
+              <p></p>
+              <p></p>
+            </section>
             <Form/>
           </section>
         </main>

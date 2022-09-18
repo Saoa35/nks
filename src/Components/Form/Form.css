@@ -2,6 +2,7 @@
     width: 700px;
     height: 100%;
     background-color: white;
+    border-radius: 2px;
   }
   
   .create-user-header {
