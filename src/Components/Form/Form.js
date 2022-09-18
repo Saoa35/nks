@@ -48,6 +48,9 @@ class Form extends React.Component {
       return(
 
         <div className='Form'>
+          <div className='static_header'>
+            
+          </div>
           <div className='create-user-header'>
             <p className='foto'><span>Bild</span></p>
           </div>
@@ -127,11 +130,11 @@ class Form extends React.Component {
             </div>
             <div><hr style={{width: '600px'}}/></div>
 
-            <div className='button_footer'>
-            <button className='cansel_button'>
+            <div className='buttons_footer'>
+            <button className='buttons cansel_button'>
               Cancel
             </button>
-            <button className='save_button'>
+            <button className='buttons save_button'>
               Save
             </button>
             </div>

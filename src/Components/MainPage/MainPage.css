@@ -89,10 +89,10 @@
 }
 
 .page_classification_button {
-    width: 40px; 
-    height: 40px; 
+    width: 35px; 
+    height: 35px; 
     border: 1px solid #00000029;
-    border-radius: 20px;
+    border-radius: 18px;
     box-shadow: 1px;
     background-color: white;
     margin: 0 10px;
