@@ -49,7 +49,7 @@
     flex-wrap: wrap;
   }
   
-  input, select {
+  .user_input, select {
     height: 4vh;
     width: 250px;
     margin-top: 30px;

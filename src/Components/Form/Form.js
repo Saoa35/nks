@@ -58,7 +58,8 @@ class Form extends React.Component {
             <p className='foto'><span>Bild</span></p>
           </div>
           <form onSubmit={this.handleSubmit}>  
-            <input 
+            <input
+              className='user_input' 
               type='text' 
               name='surName' 
               placeholder='Surname' 
@@ -67,6 +68,7 @@ class Form extends React.Component {
             />
 
             <input 
+              className='user_input'
               type='text' 
               name='firstName' 
               placeholder='Firstname' 
@@ -75,6 +77,7 @@ class Form extends React.Component {
             />
 
             <input 
+              className='user_input'
               type='text' 
               name='userName' 
               placeholder='Username' 
@@ -83,6 +86,7 @@ class Form extends React.Component {
             />
 
             <input 
+              className='user_input'
               type='email' 
               name='email' 
               placeholder='Email adress' 
@@ -100,7 +104,8 @@ class Form extends React.Component {
            
             <p style={{width:'86%', marginTop:'25px', fontWeight: 'bold'}}>Password</p>
 
-            <input 
+            <input
+              className='user_input'
               type='password' 
               name='password' 
               placeholder='Password' 
@@ -109,7 +114,8 @@ class Form extends React.Component {
               onChange={this.handleChange}
             />
 
-            <input 
+            <input
+              className='user_input'
               type='password' 
               name='confirmPassword' 
               placeholder='Confirm Password' 
