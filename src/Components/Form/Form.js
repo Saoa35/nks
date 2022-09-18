@@ -1,5 +1,6 @@
 import React from 'react';
 import './Form.css';
+import UserRoles from './UserRoles';
 
 class Form extends React.Component {
 
@@ -130,7 +131,11 @@ class Form extends React.Component {
               /> 
               <p style={{display:'inline-block' }}>Temporary Password</p>
             </div>
-            <div><hr style={{width: '600px'}}/></div>
+            <div style={{width:'100%'}}><hr style={{width: '600px'}}/></div>
+
+            <div className='user_roles_div'>
+              <UserRoles/>
+            </div>
 
             <div className='buttons_footer'>
             <button className='buttons cansel_button'>
