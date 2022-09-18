@@ -28,11 +28,13 @@ export default class MainPage extends React.Component {
           </aside>
           
           <section className='main_section'>
-          <section className='page_classification'>
-              <p></p>
-              <p></p>
-            </section>
-            <Form/>
+          <div className='page_classification'>
+              <button className={'page_classification_button'}></button>
+              <p style={{color:'#333333', fontSize:'3vh'}}>Create User</p>
+            </div>
+          <div className='main_field'>
+             <Form/>
+          </div>
           </section>
         </main>
       </div>
