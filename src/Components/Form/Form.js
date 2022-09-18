@@ -49,7 +49,8 @@ class Form extends React.Component {
 
         <div className='Form'>
           <div className='static_header'>
-            
+            <div className='user_information'>User Information</div>
+            <div className='user_roles'>User Roles</div>
           </div>
           <div className='create-user-header'>
             <p className='foto'><span>Bild</span></p>
