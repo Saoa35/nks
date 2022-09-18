@@ -20,11 +20,11 @@ export default class MainPage extends React.Component {
 
         <main className='main_main'>
           <aside className='main_aside'>
-            <ul>
               <li></li>
               <li></li>
               <li></li>
-            </ul>
+              <li style={{height:'70%'}}></li>
+              <li className='main_aside_last_li'></li>
           </aside>
           
           <section className='main_section'>
