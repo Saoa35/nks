@@ -54,3 +54,11 @@
     text-align: center;
     color: red;
   }
+
+  .button_footer {
+    width: 100%;
+    border-top: 2px solid rgb(240, 235, 235);
+    text-align: center;
+  }
+
+  

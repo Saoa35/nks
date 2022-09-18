@@ -125,13 +125,17 @@ class Form extends React.Component {
               /> 
               <p style={{display:'inline-block' }}>Temporary Password</p>
             </div>
+            <div><hr style={{width: '600px'}}/></div>
 
-            {/* <button>
-              Get state value
-            </button> */}
-
+            <div className='button_footer'>
+            <button className='cansel_button'>
+              Cancel
+            </button>
+            <button className='save_button'>
+              Save
+            </button>
+            </div>
           </form>
-          <div><hr style={{width: '600px'}}/></div>
         </div>
           
       )

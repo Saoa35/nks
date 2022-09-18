@@ -41,7 +41,7 @@
 
 .main_aside {
     width: 60px;
-    height: 1000px;
+    height: 700px;
     background-color: #E8E8E8;
     display: flex;
     flex-direction: column;
@@ -56,7 +56,16 @@
 }
 
 .main_aside_last_li {
-    align-self: flex-end;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.main_aside_last_li p {
+    width: 20px;
+    height: 20px;
+    background-image: url('../../img/Klappen_rechts.svg');
+    background-repeat: no-repeat;
 }
 
 

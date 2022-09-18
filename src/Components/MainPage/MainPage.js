@@ -23,8 +23,8 @@ export default class MainPage extends React.Component {
               <li></li>
               <li></li>
               <li></li>
-              <li style={{height:'70%'}}></li>
-              <li className='main_aside_last_li'></li>
+              <li style={{height:'75%', border: '1px solid #E8E8E8'}}></li>
+              <li className='main_aside_last_li' style={{border: '1px solid #E8E8E8'}}><p></p></li>
           </aside>
           
           <section className='main_section'>
