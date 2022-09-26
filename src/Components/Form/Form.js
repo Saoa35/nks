@@ -95,10 +95,11 @@ class Form extends React.Component {
             />
             
             <select 
-              name='realm' 
+              name='realm'
               value={this.state.realm} 
               style={{width: '87%', borderColor: 'rgb(163, 156, 156)'}} 
               onChange={this.handleChange}>
+              <option></option>
               <option value='lbbwImmo'>LBBW Immo</option>
             </select>
            
