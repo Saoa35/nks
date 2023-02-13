@@ -1,26 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Form.css';
 import UserRoles from './UserRoles';
 
-class Form extends React.Component {
+const Form = () => {
 
-    state = {
-      surName: '',
-      firstName: '',
-      userName: '',
-      email:'',
-      realm: '',
-      password: '',
-      confirmPassword:'',
-      temporaryPassword: false,
-      errors: ''
-    }
+  const [surName, setSurName] = useState('');
 
-    constructor(props) {
-      super(props);
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
+    // state = {
+    //   surName: '',
+    //   firstName: '',
+    //   userName: '',
+    //   email:'',
+    //   realm: '',
+    //   password: '',
+    //   confirmPassword:'',
+    //   temporaryPassword: false,
+    //   errors: ''
+    // }
+
 
     handleChange(e) {
       const { type, checked, name, value } = e.target;
@@ -41,7 +38,6 @@ class Form extends React.Component {
         console.log(this.state);
       }
 
-    render() {
 
       return(
 
@@ -153,7 +149,6 @@ class Form extends React.Component {
         </div>
           
       )
-    }
 }
 
 export default Form;
