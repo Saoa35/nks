@@ -1,154 +1,192 @@
-import React, { useState } from 'react';
-import './Form.css';
-import UserRoles from './UserRoles';
+import React, { useState } from "react";
+import "./Form.css";
+import UserRoles from "./UserRoles";
 
 const Form = () => {
+  const [surName, setSurName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [realm, setRealm] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [temporaryPassword, setTemporaryPassword] = useState(false);
+  const [errors, setErrors] = useState("");
 
-  const [surName, setSurName] = useState('');
+  const onChangeSurName = (e) => {
+    setSurName(e.target.value);
+  };
 
-    // state = {
-    //   surName: '',
-    //   firstName: '',
-    //   userName: '',
-    //   email:'',
-    //   realm: '',
-    //   password: '',
-    //   confirmPassword:'',
-    //   temporaryPassword: false,
-    //   errors: ''
-    // }
+  const onChangeFirstName = (e) => {
+    setFirstName(e.target.value);
+  };
 
+  const onChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
-    handleChange(e) {
-      const { type, checked, name, value } = e.target;
-      const currValue = type ==='checkbox' ? checked : value;
+  const onChangeUserName = (e) => {
+    setUserName(e.target.value);
+  };
 
-      this.setState({
-          [name]: currValue
-      })
-    }
+  const onChangeRealm = (e) => {
+    setRealm(e.target.value);
+  };
 
-    handleSubmit(e) {
-      e.preventDefault();
+  const onChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-      (this.state.password !== this.state.confirmPassword) 
-        ? this.setState({ errors: 'The password you entered does not match with the confirmation'})
-        : this.setState({ errors : ''});
+  const onChangeConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
+  };
 
-        console.log(this.state);
-      }
+  const onChangeTemporaryPassword = () => {
+    setTemporaryPassword(true);
+  };
 
+  // const { type, checked, name, value } = e.target;
+  // const currValue = type ==='checkbox' ? checked : value;
 
-      return(
+  // this.setState({
+  //     [name]: currValue
+  // })
 
-        <div className='Form'>
-          <div className='static_header'>
-            <div className='user_information'>User Information</div>
-            <div style={{width:'15%'}}><hr/></div>
-            <div className='user_roles'>Applications, Systems & User Roles</div>
-          </div>
-          <div className='create-user-header'>
-            <p className='foto'><span>Bild</span></p>
-          </div>
-          <form onSubmit={this.handleSubmit}>  
-            <input
-              className='user_input' 
-              type='text' 
-              name='surName' 
-              placeholder='Surname' 
-              value={this.state.surName} 
-              onChange={this.handleChange}
-            />
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-            <input 
-              className='user_input'
-              type='text' 
-              name='firstName' 
-              placeholder='Firstname' 
-              value={this.state.firstName} 
-              onChange={this.handleChange}
-            />
+    password !== confirmPassword
+      ? setErrors(
+          "The password you entered does not match with the confirmation"
+        )
+      : setErrors("");
 
-            <input 
-              className='user_input'
-              type='text' 
-              name='userName' 
-              placeholder='Username' 
-              value={this.state.userName} 
-              onChange={this.handleChange}
-            />
+    console.log(
+      surName,
+      firstName,
+      userName,
+      email,
+      realm,
+      password,
+      confirmPassword,
+      temporaryPassword,
+      errors
+    );
+  };
 
-            <input 
-              className='user_input'
-              type='email' 
-              name='email' 
-              placeholder='Email adress' 
-              value={this.state.email} 
-              onChange={this.handleChange}
-            />
-            
-            <select 
-              name='realm'
-              value={this.state.realm} 
-              style={{width: '87%', borderColor: 'rgb(163, 156, 156)'}} 
-              onChange={this.handleChange}>
-              <option value="" disabled hidden>Realm</option>
-              <option value='lbbwImmo'>LBBW Immo</option>
-            </select>
-           
-            <p style={{width:'86%', marginTop:'25px', fontWeight: 'bold'}}>Password</p>
-
-            <input
-              className='user_input'
-              type='password' 
-              name='password' 
-              placeholder='Password' 
-              style={{marginTop:'0'}} 
-              value={this.state.password} 
-              onChange={this.handleChange}
-            />
-
-            <input
-              className='user_input'
-              type='password' 
-              name='confirmPassword' 
-              placeholder='Confirm Password' 
-              style={{marginTop:'0'}} 
-              value={this.state.confirmPassword} 
-              onChange={this.handleChange}
-            />
-
-            <div className="error">
-              {this.state.errors ? this.state.errors : ''}
-              </div>
-            
-            <div className='checkbox-div'>
-              <input 
-                type='checkbox' 
-                name='temporaryPassword' 
-                value={this.state.temporaryPassword} 
-                onChange={this.handleChange}
-              /> 
-              <p>Temporary Password</p>
-            </div>
-            <div style={{width:'100%'}}><hr style={{width: '600px'}}/></div>
-
-            <div className='user_roles_div'>
-              <UserRoles/>
-            </div>
-
-            <div className='buttons_footer'>
-            <button className='buttons cansel_button'>
-              Cancel
-            </button>
-            <button className='buttons save_button'>
-              Save
-            </button>
-            </div>
-          </form>
+  return (
+    <div className="Form">
+      <div className="static_header">
+        <div className="user_information">User Information</div>
+        <div style={{ width: "15%" }}>
+          <hr />
         </div>
-          
-      )
-}
+        <div className="user_roles">Applications, Systems & User Roles</div>
+      </div>
+      <div className="create-user-header">
+        <p className="foto">
+          <span>Bild</span>
+        </p>
+      </div>
+      <form onSubmit={handleSubmit}>
+        <input
+          className="user_input"
+          type="text"
+          // name="surName"
+          placeholder="Surname"
+          value={surName}
+          onChange={onChangeSurName}
+        />
+
+        <input
+          className="user_input"
+          type="text"
+          // name="firstName"
+          placeholder="Firstname"
+          value={firstName}
+          onChange={onChangeFirstName}
+        />
+
+        <input
+          className="user_input"
+          type="text"
+          // name="userName"
+          placeholder="Username"
+          value={userName}
+          onChange={onChangeUserName}
+        />
+
+        <input
+          className="user_input"
+          type="email"
+          // name="email"
+          placeholder="Email adress"
+          value={email}
+          onChange={onChangeEmail}
+        />
+
+        <select
+          // name="realm"
+          style={{ width: "87%", borderColor: "rgb(163, 156, 156)" }}
+          value={realm}
+          onChange={onChangeRealm}
+        >
+          <option value="" disabled hidden>
+            Realm
+          </option>
+          <option value="lbbwImmo">LBBW Immo</option>
+        </select>
+
+        <p style={{ width: "86%", marginTop: "25px", fontWeight: "bold" }}>
+          Password
+        </p>
+
+        <input
+          className="user_input"
+          type="password"
+          // name="password"
+          placeholder="Password"
+          style={{ marginTop: "0" }}
+          value={password}
+          onChange={onChangePassword}
+        />
+
+        <input
+          className="user_input"
+          type="password"
+          // name="confirmPassword"
+          placeholder="Confirm Password"
+          style={{ marginTop: "0" }}
+          value={confirmPassword}
+          onChange={onChangeConfirmPassword}
+        />
+
+        <div className="error">{errors ? errors : ""}</div>
+
+        <div className="checkbox-div">
+          <input
+            type="checkbox"
+            // name="temporaryPassword"
+            value={temporaryPassword}
+            onChange={onChangeTemporaryPassword}
+          />
+          <p>Temporary Password</p>
+        </div>
+        <div style={{ width: "100%" }}>
+          <hr style={{ width: "600px" }} />
+        </div>
+
+        {/* <div className='user_roles_div'>
+              <UserRoles/>
+            </div> */}
+
+        <div className="buttons_footer">
+          <button className="buttons cansel_button">Cancel</button>
+          <button className="buttons save_button">Save</button>
+        </div>
+      </form>
+    </div>
+  );
+};
 
 export default Form;
