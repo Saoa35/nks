@@ -42,7 +42,7 @@ const Form = () => {
   };
 
   const onChangeTemporaryPassword = () => {
-    setTemporaryPassword(true);
+    setTemporaryPassword(!temporaryPassword);
   };
 
   // const { type, checked, name, value } = e.target;
