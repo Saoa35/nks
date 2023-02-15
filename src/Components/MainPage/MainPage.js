@@ -16,9 +16,9 @@ export default function MainPage() {
 
       <main className="main_main">
         <aside className="main_aside">
-          <li></li>
-          <li></li>
-          <li></li>
+          <li>U</li>
+          <li>UR</li>
+          <li>A,S,R</li>
           <li style={{ height: "85%", border: "1px solid #E8E8E8" }}></li>
           <li
             className="main_aside_last_li"
