@@ -29,13 +29,7 @@ export default function MainPage() {
         </aside>
 
         <section className="main_section">
-          <div className="page_classification">
-            <button className={"page_classification_button"}></button>
-            <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
-          </div>
-          <div className="main_field">
-            <Form />
-          </div>
+          <div className="main_field">{/* <Form /> */}</div>
         </section>
       </main>
     </div>
