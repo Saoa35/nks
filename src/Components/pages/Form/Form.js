@@ -2,55 +2,28 @@ import React, { useState } from "react";
 import "./Form.css";
 import { UserRoles } from "./UserRoles";
 
+function useInput(initialValue) {
+  const [value, setValue] = useState(initialValue);
+
+  const onChange = (event) => setValue(event.target.value);
+
+  return { value, onChange };
+}
+
 const Form = () => {
-  const [surName, setSurName] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-  const [realm, setRealm] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [temporaryPassword, setTemporaryPassword] = useState(false);
+  const surName = useInput("");
+  const firstName = useInput("");
+  const userName = useInput("");
+  const email = useInput("");
+  const realm = useInput("");
+  const password = useInput("");
+  const confirmPassword = useInput("");
   const [errors, setErrors] = useState("");
-
-  const onChangeSurName = (e) => {
-    setSurName(e.target.value);
-  };
-
-  const onChangeFirstName = (e) => {
-    setFirstName(e.target.value);
-  };
-
-  const onChangeEmail = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const onChangeUserName = (e) => {
-    setUserName(e.target.value);
-  };
-
-  const onChangeRealm = (e) => {
-    setRealm(e.target.value);
-  };
-
-  const onChangePassword = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const onChangeConfirmPassword = (e) => {
-    setConfirmPassword(e.target.value);
-  };
+  const [temporaryPassword, setTemporaryPassword] = useState(false);
 
   const onChangeTemporaryPassword = () => {
     setTemporaryPassword(!temporaryPassword);
   };
-
-  // const { type, checked, name, value } = e.target;
-  // const currValue = type ==='checkbox' ? checked : value;
-
-  // this.setState({
-  //     [name]: currValue
-  // })
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -97,44 +70,34 @@ const Form = () => {
           <input
             className="user_input"
             type="text"
-            // name="surName"
             placeholder="Surname"
-            value={surName}
-            onChange={onChangeSurName}
+            {...surName}
           />
 
           <input
             className="user_input"
             type="text"
-            // name="firstName"
             placeholder="Firstname"
-            value={firstName}
-            onChange={onChangeFirstName}
+            {...firstName}
           />
 
           <input
             className="user_input"
             type="text"
-            // name="userName"
             placeholder="Username"
-            value={userName}
-            onChange={onChangeUserName}
+            {...userName}
           />
 
           <input
             className="user_input"
             type="email"
-            // name="email"
             placeholder="Email adress"
-            value={email}
-            onChange={onChangeEmail}
+            {...email}
           />
 
           <select
-            // name="realm"
             style={{ width: "87%", borderColor: "rgb(163, 156, 156)" }}
-            value={realm}
-            onChange={onChangeRealm}
+            {...realm}
           >
             <option value="" disabled hidden>
               Realm
@@ -149,21 +112,17 @@ const Form = () => {
           <input
             className="user_input"
             type="password"
-            // name="password"
             placeholder="Password"
             style={{ marginTop: "0" }}
-            value={password}
-            onChange={onChangePassword}
+            {...password}
           />
 
           <input
             className="user_input"
             type="password"
-            // name="confirmPassword"
             placeholder="Confirm Password"
             style={{ marginTop: "0" }}
-            value={confirmPassword}
-            onChange={onChangeConfirmPassword}
+            {...confirmPassword}
           />
 
           <div className="error">{errors ? errors : ""}</div>
@@ -171,7 +130,6 @@ const Form = () => {
           <div className="checkbox-div">
             <input
               type="checkbox"
-              // name="temporaryPassword"
               value={temporaryPassword}
               onChange={onChangeTemporaryPassword}
             />
