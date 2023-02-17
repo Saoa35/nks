@@ -1,6 +1,7 @@
 import React from "react";
 import "./MainPage.css";
 import Form from "../Form/Form";
+import { Link } from "react-router-dom";
 
 export default function MainPage() {
   return (
@@ -16,7 +17,9 @@ export default function MainPage() {
 
       <main className="main_main">
         <aside className="main_aside">
-          <li>U</li>
+          <Link to="/forms">
+            <li>U</li>
+          </Link>
           <li>UR</li>
           <li>A,S,R</li>
           <li style={{ height: "85%", border: "1px solid #E8E8E8" }}></li>
