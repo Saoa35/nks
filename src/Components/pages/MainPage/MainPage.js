@@ -20,7 +20,9 @@ export default function MainPage() {
           <Link to="/forms">
             <li>U</li>
           </Link>
-          <li>UR</li>
+          <Link to="/user-roles">
+            <li>UR</li>
+          </Link>
           <li>A,S,R</li>
           <li style={{ height: "85%", border: "1px solid #E8E8E8" }}></li>
           <li
