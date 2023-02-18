@@ -139,9 +139,7 @@ const Form = () => {
             <hr style={{ width: "600px" }} />
           </div>
 
-          <div className="user_roles_div">
-            <UserRoles />
-          </div>
+          <div className="user_roles_div">{/* <UserRoles /> */}</div>
 
           <div className="buttons_footer">
             <button className="buttons cansel_button">Cancel</button>
