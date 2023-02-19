@@ -17,6 +17,9 @@ export default function MainPage() {
 
       <main className="main_main">
         <aside className="main_aside">
+          {/* <Link to="/forms">
+            <li>U</li>
+          </Link> */}
           <Link to="/forms">
             <li>U</li>
           </Link>

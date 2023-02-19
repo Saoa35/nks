@@ -1,7 +1,7 @@
-const Users = () => {
+export const Users = () => {
   return (
     <div>
-      <div></div>
+      <img src="src\img\Gruppe 3987.svg" alt="LogIn" />
     </div>
   );
 };
