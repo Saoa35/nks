@@ -1,7 +1,9 @@
+import "./Users.css";
+
 export const Users = () => {
   return (
     <div>
-      <img src="src\img\Gruppe 3987.svg" alt="LogIn" />
+      <p className="user-login-image"></p>
     </div>
   );
 };
