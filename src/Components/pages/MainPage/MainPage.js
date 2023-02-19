@@ -20,7 +20,7 @@ export default function MainPage() {
           {/* <Link to="/forms">
             <li>U</li>
           </Link> */}
-          <Link to="/forms">
+          <Link to="/users">
             <li>U</li>
           </Link>
           <Link to="/user-roles">
