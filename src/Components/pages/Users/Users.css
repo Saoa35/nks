@@ -1,3 +1,7 @@
+.users-main_div {
+  display: block;
+}
+
 .user-login-image {
   width: 350px;
   height: 200px;
