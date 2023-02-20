@@ -7,4 +7,11 @@
   height: 200px;
   background-image: url("../../../img/Gruppe 3987.svg");
   background-repeat: no-repeat;
+  text-align: center;
+}
+
+.user-text {
+  font-size: large;
+  font-weight: 600;
+  text-align: center;
 }
