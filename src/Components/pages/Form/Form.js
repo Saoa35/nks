@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Form.css";
 import { UserRoles } from "./UserRoles";
 
@@ -50,7 +51,9 @@ const Form = () => {
   return (
     <div className="header_name">
       <div className="page_classification">
-        <button className={"page_classification_button"}></button>
+        <Link to="/">
+          <button className="page_classification_button"></button>
+        </Link>
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
       </div>
       <div className="Form">
