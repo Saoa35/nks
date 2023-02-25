@@ -3,7 +3,7 @@ import "./Users.css";
 
 export const Users = () => {
   return (
-    <>
+    <div className="users_wrapper">
       <div className="page_classification">
         {/* <Link to="/">
           <button className="page_classification_button"></button>
@@ -19,6 +19,6 @@ export const Users = () => {
           </Link>
         </p>
       </div>
-    </>
+    </div>
   );
 };
