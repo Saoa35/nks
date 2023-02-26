@@ -1,5 +1,12 @@
+.users_wrapper {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
 .users-main_div {
   display: block;
+  text-align: center;
 }
 
 .user-login-image {
