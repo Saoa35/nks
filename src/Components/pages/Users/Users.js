@@ -11,7 +11,9 @@ export const Users = () => {
         <p style={{ color: "#333333", fontSize: "3vh" }}>Users</p>
       </div>
       <div className="users-main_div">
-        <p className="user-login-image"></p>
+        <div className="logoImage_wrapper">
+          <p className="user-login-image"></p>
+        </div>
         <p className="user-text">Add a new user</p>
         <p className="button_wrapper">
           <Link to="/forms">
