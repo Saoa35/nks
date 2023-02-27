@@ -7,7 +7,7 @@ export const Users = () => {
       <div className="page_classification justify-between">
         <p style={{ color: "#333333", fontSize: "3vh" }}>Users</p>
         <Link to="/forms">
-          <button className="page_classification_button">+</button>
+          <button className="page_classification_button margin_right">+</button>
         </Link>
       </div>
       <div className="users-main_div">
