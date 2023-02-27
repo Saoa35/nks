@@ -51,7 +51,7 @@ const Form = () => {
   return (
     <div className="header_name">
       <div className="page_classification">
-        <Link to="/">
+        <Link to="/users">
           <button className="page_classification_button"></button>
         </Link>
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
@@ -142,7 +142,9 @@ const Form = () => {
             <hr style={{ width: "600px" }} />
           </div>
 
-          <div className="user_roles_div">{/* <UserRoles /> */}</div>
+          <div className="user_roles_div">
+            <UserRoles />
+          </div>
 
           <div className="buttons_footer">
             <button className="buttons cansel_button">Cancel</button>

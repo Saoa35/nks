@@ -4,6 +4,19 @@
   text-align: center;
 }
 
+.page_classification > p {
+  margin-left: 20px;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* .add_button {
+  width: 30px;
+  margin-right: 20px;
+} */
+
 .users-main_div {
   display: block;
   text-align: center;

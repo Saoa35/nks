@@ -10,7 +10,6 @@
   height: 55px;
   background-color: white;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   margin-bottom: 10px;
 }
