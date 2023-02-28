@@ -85,3 +85,7 @@
   display: flex;
   justify-content: center;
 }
+
+.left_bar_buttons {
+  text-align: center;
+}
