@@ -4,12 +4,12 @@ export const LeftBar = () => {
   return (
     <aside className="main_aside">
       <Link to="/users">
-        <li>U</li>
+        <li className="left_bar_buttons">U</li>
       </Link>
       <Link to="/user-roles">
-        <li>UR</li>
+        <li className="left_bar_buttons">UR</li>
       </Link>
-      <li>A,S,R</li>
+      <li className="left_bar_buttons"> A,S,R</li>
       <li style={{ height: "85%", border: "1px solid #E8E8E8" }}></li>
       <li
         className="main_aside_last_li"
