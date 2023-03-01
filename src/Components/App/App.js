@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { Header } from "../Header";
 import { LeftBar } from "../LeftBar";
+import { ApSysRol } from "../pages/AplSystandRoles/ApSysRol";
 import Form from "../pages/Form/Form";
 import { UserRoles } from "../pages/Form/UserRoles";
 import { Users } from "../pages/Users/Users";
@@ -19,6 +20,7 @@ function App() {
               <Route path="/users" element={<Users />} />
               <Route path="/forms" element={<Form />} />
               <Route path="/user-roles" element={<UserRoles />} />
+              <Route path="/apl-sys-roles" element={<ApSysRol />} />
             </Routes>
           </div>
         </section>
