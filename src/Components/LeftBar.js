@@ -9,7 +9,7 @@ export const LeftBar = () => {
       <Link to="/user-roles">
         <li className="left_bar_buttons">UR</li>
       </Link>
-      <Link>
+      <Link to="/apl-sys-roles">
         <li className="left_bar_buttons"> A,S,R</li>
       </Link>
       <li style={{ height: "85%", border: "1px solid #E8E8E8" }}></li>
