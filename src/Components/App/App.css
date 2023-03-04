@@ -65,9 +65,9 @@
 
 .main_aside_last_li {
   flex: auto;
-  /* display: flex;
+  display: flex;
   justify-content: center;
-  align-items: center; */
+  align-items: flex-end;
 }
 
 .main_aside_last_li p {
