@@ -64,9 +64,10 @@
 }
 
 .main_aside_last_li {
-  display: flex;
+  flex: auto;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .main_aside_last_li p {
