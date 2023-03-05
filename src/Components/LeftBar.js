@@ -12,12 +12,11 @@ export const LeftBar = () => {
       <Link to="/apl-sys-roles">
         <li className="left_bar_buttons"> A,S,R</li>
       </Link>
-      {/* <li style={{ height: "85%", border: "1px solid #E8E8E8" }}></li> */}
       <li
         className="main_aside_last_li"
         style={{ border: "1px solid #E8E8E8" }}
       >
-        <p></p>
+        <p className="pop-up--menu__button"></p>
       </li>
     </aside>
   );

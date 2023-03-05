@@ -70,7 +70,7 @@
   align-items: flex-end;
 }
 
-.main_aside_last_li p {
+.pop-up--menu__button {
   width: 20px;
   height: 20px;
   background-image: url("../../img/Klappen_rechts.svg");
