@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Form.css";
 import { UserRoles } from "./UserRoles";
 
 function useInput(initialValue) {
@@ -49,7 +48,7 @@ const Form = () => {
   };
 
   return (
-    <div className="header_name">
+    <div className="Forms">
       <div className="page_classification">
         <Link to="/users">
           <button className="page_classification_button"></button>

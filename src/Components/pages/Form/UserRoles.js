@@ -1,5 +1,4 @@
 import React from "react";
-import "./UserRoles.css";
 
 export const UserRoles = () => {
   // constructor(props) {

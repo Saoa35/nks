@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import "./Users.css";
 
 export const Users = () => {
   return (
-    <div className="users_wrapper">
+    <div className="Users">
       <div className="page_classification justify-between">
-        <p style={{ color: "#333333", fontSize: "3vh" }}>Users</p>
+        <p className="page_name">Users</p>
         <Link to="/forms">
           <button className="page_classification_button margin_right">+</button>
         </Link>

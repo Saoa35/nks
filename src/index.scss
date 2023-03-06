@@ -58,7 +58,7 @@ body {
           text-decoration: none;
         }
 
-        .left_bar_buttons {
+        li {
           display: flex;
           justify-content: center;
           align-items: center;
@@ -69,14 +69,14 @@ body {
           cursor: pointer;
         }
 
-        .main_aside_last_li {
+        .last_li {
           flex: auto;
           display: flex;
           justify-content: center;
           align-items: flex-end;
           border: "1px solid #E8E8E8";
 
-          .pop-up--menu__button {
+          p {
             width: 20px;
             height: 20px;
             background-image: url("./img/Klappen_rechts.svg");
@@ -94,6 +94,245 @@ body {
       .main_field {
         display: flex;
         justify-content: center;
+      }
+    }
+
+    .Forms {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .Form {
+        width: 700px;
+        height: 100%;
+        background-color: white;
+        border-radius: 5px;
+
+        .static_header {
+          height: 50px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          .user_information {
+            margin-left: 20px;
+            margin-right: 20px;
+            color: $dark-green;
+          }
+
+          .user_roles {
+            margin-left: 10px;
+            color: #9f9b9b;
+          }
+        }
+
+        .create-user-header {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          height: 100px;
+          background-color: rgb(212, 237, 237);
+
+          .foto {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            width: 80px;
+            height: 80px;
+            background-color: #d1d1d1;
+            color: white;
+            border-radius: 50px;
+            padding: 10px;
+          }
+        }
+
+        form {
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+
+          .user_input,
+          select {
+            height: 4vh;
+            width: 250px;
+            margin-top: 30px;
+            border-radius: 5px;
+            border-color: rgb(240, 235, 235);
+          }
+
+          .error {
+            width: 100%;
+            text-align: center;
+            color: red;
+          }
+
+          .checkbox-div {
+            width: 87%;
+
+            p {
+              display: inline-block;
+              margin-left: 10px;
+            }
+          }
+
+          .buttons_footer {
+            width: 100%;
+            height: 60px;
+            border-top: 2px solid rgb(240, 235, 235);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .cansel_button {
+              margin-right: 10px;
+              background-color: rgb(193, 184, 184);
+            }
+
+            .save_button {
+              margin-left: 10px;
+              background-color: $dark-green;
+            }
+          }
+        }
+      }
+    }
+
+    .buttons {
+      width: 150px;
+      height: 30px;
+      color: white;
+      border-radius: 5px;
+      border-color: inherit;
+      cursor: pointer;
+    }
+
+    .page_classification {
+      width: 100%;
+      height: 55px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .page_classification_button {
+        width: 35px;
+        height: 35px;
+        border: 1px solid #00000029;
+        border-radius: 18px;
+        box-shadow: 1px;
+        background-color: white;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+    }
+
+    .page_name {
+      margin-left: 20px;
+      color: #333333;
+      font-size: 3vh;
+    }
+
+    .users_wrapper,
+    .Users {
+      width: 100%;
+      height: 100%;
+      text-align: center;
+
+      .margin_right {
+        margin-right: 20px;
+      }
+
+      .justify-between {
+        justify-content: space-between;
+      }
+
+      .users-main_div {
+        display: block;
+        text-align: center;
+
+        .logoImage_wrapper {
+          display: flex;
+          justify-content: center;
+
+          .user-login-image {
+            width: 350px;
+            height: 200px;
+            background-image: url("./img/Gruppe 3987.svg");
+            background-repeat: no-repeat;
+            text-align: center;
+          }
+        }
+
+        .user-text {
+          font-size: large;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        .button_wrapper {
+          text-align: center;
+
+          .add-user_button {
+            width: 180px;
+            height: 30px;
+            background-color: $dark-green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .UserRoles {
+      width: 700px;
+
+      .user_roles_header {
+        font-weight: 600;
+        padding-left: 20px;
+        margin-bottom: 0;
+      }
+      .select_header {
+        display: flex;
+        justify-content: flex-start;
+
+        p {
+          width: 50%;
+          padding-left: 20px;
+        }
+      }
+    }
+
+    .user_roles_main {
+      display: flex;
+
+      .user_roles_list {
+        width: 50%;
+        list-style: none;
+
+        .major_li {
+          margin-left: 15px;
+          margin-bottom: 20px;
+
+          .minor_div {
+            margin-left: 20px;
+
+            p {
+              display: inline-block;
+              width: 30px;
+              height: 30px;
+              border-radius: 15px;
+              background-color: rgba(140, 184, 185, 0.407);
+              margin: 15px 10px 0 10px;
+            }
+          }
+        }
+      }
+
+      .selected_roles {
+        border-left: 2px solid rgb(222, 219, 219);
       }
     }
   }
