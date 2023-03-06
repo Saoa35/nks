@@ -5,7 +5,6 @@ import { ApSysRol } from "../pages/AplSystandRoles/ApSysRol";
 import Form from "../pages/Form/Form";
 import { Users } from "../pages/Users/Users";
 import UsRoles from "../pages/UsRoles/UsRoles";
-import "./App.css";
 
 function App() {
   return (

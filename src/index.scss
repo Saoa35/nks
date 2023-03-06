@@ -1,0 +1,100 @@
+$dark-green: #2ca5b4;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f0f0;
+  .App {
+    width: 100%;
+    height: inherit;
+
+    .main_header {
+      width: 100%;
+      height: 50px;
+      background-color: $dark-green;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      .user_management {
+        color: white;
+        width: 70%;
+      }
+
+      .user_initials {
+        width: 45px;
+        height: 45px;
+        background-color: white;
+        color: $dark-green;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 25px;
+        cursor: pointer;
+      }
+
+      .user_initials:hover {
+        background-color: rgb(29, 130, 136);
+        color: white;
+      }
+    }
+
+    .main_main {
+      width: 100%;
+      height: inherit;
+      display: flex;
+
+      .main_aside {
+        width: 60px;
+        height: inherit;
+        background-color: #e8e8e8;
+        display: flex;
+        flex-direction: column;
+
+        a {
+          text-decoration: none;
+        }
+
+        .left_bar_buttons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 60px;
+          list-style: none;
+          border-bottom: 1px solid rgb(203, 200, 200);
+          cursor: pointer;
+        }
+
+        .main_aside_last_li {
+          flex: auto;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          border: "1px solid #E8E8E8";
+
+          .pop-up--menu__button {
+            width: 20px;
+            height: 20px;
+            background-image: url("./img/Klappen_rechts.svg");
+            background-repeat: no-repeat;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .main_section {
+        width: 100%;
+        height: 100%;
+      }
+
+      .main_field {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
