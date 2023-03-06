@@ -3,8 +3,8 @@ import { Header } from "../Header";
 import { LeftBar } from "../LeftBar";
 import { ApSysRol } from "../pages/AplSystandRoles/ApSysRol";
 import Form from "../pages/Form/Form";
-import { UserRoles } from "../pages/Form/UserRoles";
 import { Users } from "../pages/Users/Users";
+import UsRoles from "../pages/UsRoles/UsRoles";
 import "./App.css";
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
             <Routes>
               <Route path="/users" element={<Users />} />
               <Route path="/forms" element={<Form />} />
-              <Route path="/user-roles" element={<UserRoles />} />
+              <Route path="/user-roles" element={<UsRoles />} />
               <Route path="/apl-sys-roles" element={<ApSysRol />} />
             </Routes>
           </div>
