@@ -9,16 +9,19 @@ export const Users = () => {
           <button className="page_classification_button margin_right">+</button>
         </Link>
       </div>
-      <div className="users-main_div">
-        <div className="logoImage_wrapper">
-          <p className="user-login-image"></p>
+      <div className="main_wrapper">
+        <div className="users__list--div"></div>
+        <div className="users-main_div">
+          <div className="logoImage_wrapper">
+            <p className="user-login-image"></p>
+          </div>
+          <p className="user-text">Add a new user</p>
+          <p className="button_wrapper">
+            <Link to="/forms">
+              <button className="add-user_button ">Create User</button>
+            </Link>
+          </p>
         </div>
-        <p className="user-text">Add a new user</p>
-        <p className="button_wrapper">
-          <Link to="/forms">
-            <button className="add-user_button ">Create User</button>
-          </Link>
-        </p>
       </div>
     </div>
   );
