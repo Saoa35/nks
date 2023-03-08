@@ -239,6 +239,10 @@ body {
       height: 100%;
       text-align: center;
 
+      .main_wrapper {
+        display: flex;
+      }
+
       .margin_right {
         margin-right: 20px;
       }
