@@ -2,12 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Users = () => {
-  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((data) => data.json())
-      .then((obj) => setUser(obj))
+      .then((obj) => setUsers(obj))
       .catch((error) => console.error(error));
   }, []);
 
@@ -20,7 +20,16 @@ export const Users = () => {
         </Link>
       </div>
       <div className="main_wrapper">
-        <div className="users__list--div"></div>
+        <div className="users__list--div">
+          <ul>
+            {users?.map((el, i) => (
+              <li key={i}>
+                <p>{el.name}</p>
+                <p>{el.company.catchPhrase}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="users-main_div">
           <div className="logoImage_wrapper">
             <p className="user-login-image"></p>
