@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const Users = () => {
+  const [user, setUser] = useState([]);
+
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((data) => data.json())
+      .then((obj) => setUser(obj))
+      .catch((error) => console.error(error));
+  }, []);
+
   return (
     <div className="Users">
       <div className="page_classification justify-between">
