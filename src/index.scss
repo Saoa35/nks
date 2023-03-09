@@ -241,6 +241,20 @@ body {
 
       .main_wrapper {
         display: flex;
+
+        .users__list--div {
+          background-color: white;
+
+          ul {
+            margin: 0;
+            padding: 0;
+
+            li {
+              list-style: none;
+              border-top: #dfdfdf solid 1px;
+            }
+          }
+        }
       }
 
       .margin_right {

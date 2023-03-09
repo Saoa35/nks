@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Users = () => {
   const [users, setUsers] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -21,6 +22,14 @@ export const Users = () => {
       </div>
       <div className="main_wrapper">
         <div className="users__list--div">
+          <div className="search_block">
+            <input
+              onChange={(e) => setSearch(e.target.value)}
+              value={search}
+              placeholder="Search"
+            />
+            <button></button>
+          </div>
           <ul>
             {users?.map((el, i) => (
               <li key={i}>
