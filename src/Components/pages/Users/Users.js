@@ -5,6 +5,10 @@ export const Users = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
 
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((data) => data.json())
@@ -24,7 +28,7 @@ export const Users = () => {
         <div className="users__list--div">
           <div className="search_block">
             <input
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={handleChange}
               value={search}
               placeholder="Search"
             />
