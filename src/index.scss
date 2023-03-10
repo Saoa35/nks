@@ -245,9 +245,19 @@ body {
         .users__list--div {
           background-color: white;
 
+          .search_block {
+            display: flex;
+            justify-content: space-around;
+
+            input {
+              height: 28px;
+              border: #9f9b9b solid 1px;
+            }
+          }
+
           ul {
             margin: 0;
-            padding: 0;
+            padding: 0 10px;
 
             li {
               list-style: none;
@@ -267,7 +277,9 @@ body {
 
       .users-main_div {
         display: block;
+        width: 65%;
         text-align: center;
+        margin-top: 10%;
 
         .logoImage_wrapper {
           display: flex;
