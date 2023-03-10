@@ -247,11 +247,27 @@ body {
 
           .search_block {
             display: flex;
-            justify-content: space-around;
+            justify-content: flex-start;
+            padding: 15px 5px;
+            position: relative;
 
             input {
-              height: 28px;
-              border: #9f9b9b solid 1px;
+              height: 30px;
+              width: 70%;
+              border: rgb(193, 184, 184) solid 1px;
+              border-radius: 5px;
+              margin-left: 10px;
+            }
+
+            button {
+              width: 30px;
+              height: 30px;
+              border-radius: 25px;
+              border: 1px solid rgb(214, 214, 214);
+              background-color: white;
+              cursor: pointer;
+              position: absolute;
+              margin-left: 275px;
             }
           }
 
