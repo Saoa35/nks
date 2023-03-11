@@ -249,7 +249,7 @@ body {
             display: flex;
             justify-content: flex-start;
             padding: 15px 5px;
-            position: relative;
+            // position: relative;
 
             input {
               height: 30px;
@@ -259,7 +259,7 @@ body {
               margin-left: 10px;
             }
 
-            button {
+            div {
               width: 30px;
               height: 30px;
               border-radius: 25px;
@@ -268,6 +268,12 @@ body {
               cursor: pointer;
               position: absolute;
               margin-left: 275px;
+              margin-top: 5px;
+
+              p {
+                background-image: url("./img/Klappen_rechts2.svg");
+                // background-repeat: no-repeat;
+              }
             }
           }
 

@@ -28,11 +28,14 @@ export const Users = () => {
         <div className="users__list--div">
           <div className="search_block">
             <input
+              type="text"
               onChange={handleChange}
               value={search}
               placeholder="Search"
             />
-            <button></button>
+            <div>
+              <p></p>
+            </div>
           </div>
           <ul>
             {users?.map((el, i) => (
