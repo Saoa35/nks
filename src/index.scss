@@ -271,8 +271,13 @@ body {
               margin-top: 5px;
 
               p {
+                width: 20px;
+                height: 20px;
                 background-image: url("./img/Klappen_rechts2.svg");
-                // background-repeat: no-repeat;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: -10px;
+                left: 11px;
               }
             }
           }
