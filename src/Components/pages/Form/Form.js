@@ -50,7 +50,7 @@ const Form = () => {
   return (
     <div className="Forms">
       <div className="page_classification">
-        <Link to="/users">
+        <Link to="/">
           <button className="page_classification_button"></button>
         </Link>
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
