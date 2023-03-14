@@ -16,7 +16,7 @@ function App() {
         <section className="main_section">
           <div className="main_field">
             <Routes>
-              <Route path="/users" element={<Users />} />
+              <Route path="/" element={<Users />} />
               <Route path="/forms" element={<Form />} />
               <Route path="/user-roles" element={<UsRoles />} />
               <Route path="/apl-sys-roles" element={<ApSysRol />} />

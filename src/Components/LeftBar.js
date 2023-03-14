@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const LeftBar = () => {
   return (
     <aside className="main_aside">
-      <Link to="/users">
+      <Link to="/">
         <li>U</li>
       </Link>
       <Link to="/user-roles">
