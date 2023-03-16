@@ -288,18 +288,12 @@ body {
             li {
               display: flex;
               flex-direction: column;
-              // justify-content: flex-start;
               align-items: flex-start;
               list-style: none;
               border-top: #dfdfdf solid 1px;
 
               :first-child {
-                // font-size: 19px;
                 font-weight: 500;
-              }
-
-              :last-child {
-                // font-size: 16px;
               }
 
               p {
