@@ -40,8 +40,11 @@ export const Users = () => {
           <ul>
             {users?.map((el, i) => (
               <li key={i}>
-                <p>{el.name}</p>
-                <p>{el.company.catchPhrase}</p>
+                <div className="first_letters"></div>
+                <div className="users_names">
+                  <p>{el.name}</p>
+                  <p>{el.company.name}</p>
+                </div>
               </li>
             ))}
           </ul>
