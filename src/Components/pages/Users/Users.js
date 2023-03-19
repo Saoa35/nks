@@ -27,7 +27,33 @@ export const Users = () => {
       <div className="page_classification justify-between">
         <p className="page_name">Users</p>
         <Link to="/forms">
-          <button className="page_classification_button margin_right">+</button>
+          <button className="page_classification_button margin_right">
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <title>Layer 1</title>
+                <line
+                  strokeWidth="2"
+                  id="svg_2"
+                  y2="23.97652"
+                  x2="8.09392"
+                  y1="-0.03629"
+                  x1="8.04055"
+                  stroke="#2ca5b4"
+                  fill="none"
+                />
+                <line
+                  strokeWidth="2"
+                  id="svg_3"
+                  y2="8.18143"
+                  x2="23.78228"
+                  y1="8.12807"
+                  x1="-0.28389"
+                  stroke="#2ca5b4"
+                  fill="none"
+                />
+              </g>
+            </svg>
+          </button>
         </Link>
       </div>
       <div className="main_wrapper">
@@ -76,8 +102,8 @@ export const Users = () => {
               <div className="add-user_button ">
                 <p>
                   <svg
-                    width="33"
-                    height="20"
+                    width="25"
+                    height="16"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <g>
@@ -88,17 +114,17 @@ export const Users = () => {
                         id="svg_1"
                         cy="5.72494"
                         cx="12.16951"
-                        stroke="#000"
-                        fill="#fff"
+                        stroke="#ffffff"
+                        fill="#2ca5b4"
                       />
                       <ellipse
-                        stroke="#000"
+                        stroke="#ffffff"
                         ry="4.23774"
                         rx="11.70042"
                         id="svg_2"
                         cy="14.94669"
                         cx="12.30277"
-                        fill="#fff"
+                        fill="#2ca5b4"
                       />
                       <line
                         id="svg_3"
@@ -106,12 +132,12 @@ export const Users = () => {
                         x2="31.86033"
                         y1="8.15032"
                         x1="21.78571"
-                        stroke="#000"
+                        stroke="#ffffff"
                         fill="none"
                       />
                       <line
                         transform="rotate(0.709444 26.6631 7.9371)"
-                        stroke="#000"
+                        stroke="#ffffff"
                         id="svg_4"
                         y2="13.00106"
                         x2="26.68976"

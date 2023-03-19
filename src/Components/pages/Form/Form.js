@@ -51,7 +51,45 @@ const Form = () => {
     <div className="Forms">
       <div className="page_classification">
         <Link to="/">
-          <button className="page_classification_button"></button>
+          <button className="page_classification_button">
+            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <title>Layer 1</title>
+                <line
+                  strokeWidth="2"
+                  id="svg_3"
+                  y2="8.18143"
+                  x2="23.78228"
+                  y1="8.12807"
+                  x1="-0.28389"
+                  stroke="#2ca5b4"
+                  fill="none"
+                />
+                <line
+                  transform="rotate(-15.3382 3.6937 4.30523)"
+                  id="svg_8"
+                  y2="1.47705"
+                  x2="7.93597"
+                  y1="7.1334"
+                  x1="-0.54856"
+                  strokeWidth="2"
+                  stroke="#2ca5b4"
+                  fill="none"
+                />
+                <line
+                  transform="rotate(18.561 3.53362 12.2828)"
+                  stroke="#2ca5b4"
+                  id="svg_9"
+                  y2="14.87086"
+                  x2="7.61579"
+                  y1="9.69477"
+                  x1="-0.54856"
+                  strokeWidth="2"
+                  fill="none"
+                />
+              </g>
+            </svg>
+          </button>
         </Link>
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
       </div>
