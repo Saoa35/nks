@@ -103,6 +103,46 @@ const Form = () => {
         </div>
         <div className="create-user-header">
           <p className="foto">
+            <svg width="50" height="45" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <ellipse
+                  ry="11"
+                  rx="11"
+                  id="svg_1"
+                  cy="11.62011"
+                  cx="26.13128"
+                  stroke="#ffffff"
+                  fill="#fff"
+                />
+                <ellipse
+                  stroke="#ffffff"
+                  ry="16.68994"
+                  rx="27.65363"
+                  id="svg_2"
+                  cy="44.51117"
+                  cx="25.22346"
+                  fill="#fff"
+                />
+                <rect
+                  id="svg_3"
+                  height="15.36313"
+                  width="69.69273"
+                  y="47.65362"
+                  x="0.22346"
+                  stroke="#000"
+                  fill="#fff"
+                />
+                <line
+                  id="svg_6"
+                  y2="46.9553"
+                  x2="66.14525"
+                  y1="46.9553"
+                  x1="3.85475"
+                  stroke="#000"
+                  fill="none"
+                />
+              </g>
+            </svg>
             <span>Bild</span>
           </p>
         </div>

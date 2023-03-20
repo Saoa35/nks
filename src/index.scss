@@ -1,5 +1,9 @@
 $dark-green: #2ca5b4;
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -28,6 +32,7 @@ body {
 
         p {
           margin-left: 20px;
+          cursor: pointer;
         }
       }
 
@@ -114,7 +119,7 @@ body {
       align-items: center;
 
       .Form {
-        width: 700px;
+        width: 73%;
         height: 100%;
         background-color: white;
         border-radius: 5px;
@@ -146,15 +151,17 @@ body {
           background-color: rgb(212, 237, 237);
 
           .foto {
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            width: 80px;
-            height: 80px;
+            // display: flex;
+            // justify-content: center;
+            // align-items: flex-end;
+            text-align: center;
+            width: 90px;
+            height: 90px;
             background-color: #d1d1d1;
-            color: white;
+            color: #ffffff;
             border-radius: 50px;
             padding: 10px;
+            margin-top: 25px;
           }
         }
 
@@ -188,13 +195,17 @@ body {
           }
 
           .buttons_footer {
-            width: 100%;
+            width: 69%;
             height: 60px;
-            border-top: 2px solid rgb(255, 255, 255);
-            // position: sticky;
+            border-top: 2px solid rgb(236, 236, 236);
             display: flex;
             justify-content: center;
             align-items: center;
+            position: fixed;
+            bottom: 0;
+            background-color: #fff;
+            // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            // z-index: 9999;
 
             .cansel_button {
               margin-right: 10px;

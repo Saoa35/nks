@@ -22,6 +22,27 @@ export const Users = () => {
     return firstLet.join("");
   }
 
+  const usersList = users
+    .filter((obj) => obj.name.toLowerCase().includes(search.toLowerCase()))
+    .map((el, i) => (
+      <li key={i}>
+        <div className="first_letters">
+          <p>{firstLetters(el.name)}</p>
+        </div>
+        <div
+          className={
+            el.address.zipcode.startsWith("5")
+              ? "ofline_status"
+              : "online_status"
+          }
+        ></div>
+        <div className="users_names">
+          <p>{el.name}</p>
+          <p>{el.company.name}</p>
+        </div>
+      </li>
+    ));
+
   return (
     <div className="Users">
       <div className="page_classification justify-between">
@@ -30,7 +51,6 @@ export const Users = () => {
           <button className="page_classification_button margin_right">
             <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg">
               <g>
-                <title>Layer 1</title>
                 <line
                   strokeWidth="2"
                   id="svg_2"
@@ -63,7 +83,7 @@ export const Users = () => {
               type="text"
               onChange={handleChange}
               value={search}
-              placeholder="Search"
+              placeholder="  Search"
             />
             <div>
               <div>
@@ -71,26 +91,7 @@ export const Users = () => {
               </div>
             </div>
           </div>
-          <ul>
-            {users?.map((el, i) => (
-              <li key={i}>
-                <div className="first_letters">
-                  <p>{firstLetters(el.name)}</p>
-                </div>
-                <div
-                  className={
-                    el.address.zipcode.startsWith("5")
-                      ? "ofline_status"
-                      : "online_status"
-                  }
-                ></div>
-                <div className="users_names">
-                  <p>{el.name}</p>
-                  <p>{el.company.name}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <ul>{usersList}</ul>
         </div>
         <div className="users-main_div">
           <div className="logoImage_wrapper">
