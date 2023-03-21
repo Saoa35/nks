@@ -4,9 +4,7 @@ import { UserRoles } from "./UserRoles";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
-
   const onChange = (event) => setValue(event.target.value);
-
   return { value, onChange };
 }
 
@@ -27,13 +25,11 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     password !== confirmPassword
       ? setErrors(
           "The password you entered does not match with the confirmation"
         )
       : setErrors("");
-
     console.log(
       surName,
       firstName,
@@ -147,76 +143,90 @@ const Form = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <input
-            className="user_input"
-            type="text"
-            placeholder="Surname"
-            {...surName}
-          />
+          <div className="user_form--wrapper">
+            <div className="users_info">
+              <input
+                className="user_input"
+                type="text"
+                placeholder="Surname"
+                {...surName}
+              />
 
-          <input
-            className="user_input"
-            type="text"
-            placeholder="Firstname"
-            {...firstName}
-          />
+              <input
+                className="user_input"
+                type="text"
+                placeholder="Firstname"
+                {...firstName}
+              />
 
-          <input
-            className="user_input"
-            type="text"
-            placeholder="Username"
-            {...userName}
-          />
+              <input
+                className="user_input"
+                type="text"
+                placeholder="Username"
+                {...userName}
+              />
 
-          <input
-            className="user_input"
-            type="email"
-            placeholder="Email adress"
-            {...email}
-          />
+              <input
+                className="user_input"
+                type="email"
+                placeholder="Email adress"
+                {...email}
+              />
+            </div>
 
-          <select
-            style={{ width: "87%", borderColor: "rgb(163, 156, 156)" }}
-            {...realm}
-          >
-            <option value="" disabled hidden>
-              Realm
-            </option>
-            <option value="lbbwImmo">LBBW Immo</option>
-          </select>
+            <select
+              style={{ width: "63vw", borderColor: "rgb(163, 156, 156)" }}
+              {...realm}
+            >
+              <option value="" disabled hidden>
+                Realm
+              </option>
+              <option value="lbbwImmo">LBBW Immo</option>
+            </select>
 
-          <p style={{ width: "86%", marginTop: "25px", fontWeight: "bold" }}>
-            Password
-          </p>
+            <p style={{ width: "86%", marginTop: "25px", fontWeight: "bold" }}>
+              Password
+            </p>
 
-          <input
-            className="user_input"
-            type="password"
-            placeholder="Password"
-            style={{ marginTop: "0" }}
-            {...password}
-          />
+            <div className="users_info">
+              <input
+                className="user_input"
+                type="password"
+                placeholder="Password"
+                style={{ marginTop: "0" }}
+                {...password}
+              />
 
-          <input
-            className="user_input"
-            type="password"
-            placeholder="Confirm Password"
-            style={{ marginTop: "0" }}
-            {...confirmPassword}
-          />
+              <input
+                className="user_input"
+                type="password"
+                placeholder="Confirm Password"
+                style={{ marginTop: "0" }}
+                {...confirmPassword}
+              />
+            </div>
 
-          <div className="error">{errors ? errors : ""}</div>
+            <div className="error">{errors ? errors : ""}</div>
 
-          <div className="checkbox-div">
-            <input
-              type="checkbox"
-              value={temporaryPassword}
-              onChange={onChangeTemporaryPassword}
-            />
-            <p>Temporary Password</p>
+            <div className="checkbox-div">
+              <input
+                type="checkbox"
+                value={temporaryPassword}
+                onChange={onChangeTemporaryPassword}
+              />
+              <p>Temporary Password</p>
+            </div>
           </div>
-          <div style={{ width: "100%" }}>
-            <hr style={{ width: "600px" }} />
+          <div
+            style={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "flex-start",
+            }}
+          >
+            <hr
+              style={{ width: "90%", border: "1px solid #f5f0f0", margin: "0" }}
+            />
           </div>
 
           <div className="user_roles_div">

@@ -17,8 +17,7 @@ export const Users = () => {
   }, []);
 
   function firstLetters(str) {
-    const toArr = str.split(" ");
-    const firstLet = toArr.map((el) => (el = el[0]));
+    const firstLet = str.split(" ").map((el) => (el = el[0]));
     return firstLet.join("");
   }
 
