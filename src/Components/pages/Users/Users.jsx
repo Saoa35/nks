@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 export const Users = () => {
   const [users, setUsers] = useState([]);
   const [search, setSearch] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -84,9 +89,9 @@ export const Users = () => {
               value={search}
               placeholder="  Search"
             />
-            <div>
-              <div>
-                <p></p>
+            <div className="popup_wrapper">
+              <div className="popup_button_wrapper" onClick={handleClick}>
+                <p className="popup_button"></p>
               </div>
             </div>
           </div>
