@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { UserRoles } from "./UserRoles";
+import styles from "./Form.module.scss";
 
 function useInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -44,7 +45,7 @@ const Form = () => {
   };
 
   return (
-    <div className="Forms">
+    <div className={styles.forms}>
       <div className="page_classification">
         <Link to="/">
           <button className="page_classification_button">
@@ -89,16 +90,18 @@ const Form = () => {
         </Link>
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
       </div>
-      <div className="Form">
-        <div className="static_header">
-          <div className="user_information">User Information</div>
+      <div className={styles.form}>
+        <div className={styles.static_header}>
+          <div className={styles.user_information}>User Information</div>
           <div style={{ width: "15%" }}>
             <hr />
           </div>
-          <div className="user_roles">Applications, Systems & User Roles</div>
+          <div className={styles.user_roles}>
+            Applications, Systems & User Roles
+          </div>
         </div>
-        <div className="create-user-header">
-          <p className="foto">
+        <div className={styles.create_header}>
+          <p>
             <svg width="50" height="45" xmlns="http://www.w3.org/2000/svg">
               <g>
                 <ellipse
@@ -143,35 +146,15 @@ const Form = () => {
           </p>
         </div>
         <form onSubmit={handleSubmit}>
-          <div className="user_form--wrapper">
-            <div className="users_info">
-              <input
-                className="user_input"
-                type="text"
-                placeholder="Surname"
-                {...surName}
-              />
+          <div>
+            <div className={styles.users_info}>
+              <input type="text" placeholder="Surname" {...surName} />
 
-              <input
-                className="user_input"
-                type="text"
-                placeholder="Firstname"
-                {...firstName}
-              />
+              <input type="text" placeholder="Firstname" {...firstName} />
 
-              <input
-                className="user_input"
-                type="text"
-                placeholder="Username"
-                {...userName}
-              />
+              <input type="text" placeholder="Username" {...userName} />
 
-              <input
-                className="user_input"
-                type="email"
-                placeholder="Email adress"
-                {...email}
-              />
+              <input type="email" placeholder="Email adress" {...email} />
             </div>
 
             <select
@@ -188,9 +171,8 @@ const Form = () => {
               Password
             </p>
 
-            <div className="users_info">
+            <div className={styles.users_info}>
               <input
-                className="user_input"
                 type="password"
                 placeholder="Password"
                 style={{ marginTop: "0" }}
@@ -198,7 +180,6 @@ const Form = () => {
               />
 
               <input
-                className="user_input"
                 type="password"
                 placeholder="Confirm Password"
                 style={{ marginTop: "0" }}
@@ -206,9 +187,9 @@ const Form = () => {
               />
             </div>
 
-            <div className="error">{errors ? errors : ""}</div>
+            <div className={styles.error}>{errors ? errors : ""}</div>
 
-            <div className="checkbox-div">
+            <div className={styles.checkbox_div}>
               <input
                 type="checkbox"
                 value={temporaryPassword}
@@ -217,25 +198,17 @@ const Form = () => {
               <p>Temporary Password</p>
             </div>
           </div>
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "flex-start",
-            }}
-          >
-            <hr
-              style={{ width: "90%", border: "1px solid #f5f0f0", margin: "0" }}
-            />
+          <div className={styles.underline}>
+            <hr />
           </div>
 
-          <div className="user_roles_div">
+          <div>
             <UserRoles />
           </div>
 
-          <div className="buttons_footer">
-            <button className="buttons cansel_button">Cancel</button>
-            <button className="buttons save_button">Save</button>
+          <div className={styles.buttons_footer}>
+            <button className={styles.cansel_button}>Cancel</button>
+            <button className={styles.save_button}>Save</button>
           </div>
         </form>
       </div>
