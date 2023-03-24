@@ -6,18 +6,15 @@ $dark-green: #2ca5b4;
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   background-color: #f0f0f0;
 
   .App {
     width: 100%;
     height: inherit;
 
-    .main_header {
+    header {
       width: 100%;
       height: 50px;
       background-color: $dark-green;
@@ -58,12 +55,12 @@ body {
       }
     }
 
-    .main_main {
+    main {
       width: 100%;
       height: inherit;
       display: flex;
 
-      .main_aside {
+      aside {
         width: 60px;
         height: inherit;
         background-color: #e8e8e8;
@@ -84,7 +81,7 @@ body {
           cursor: pointer;
         }
 
-        .last_li {
+        .green_arrow {
           flex: auto;
           display: flex;
           justify-content: center;
@@ -100,7 +97,7 @@ body {
         }
       }
 
-      .main_section {
+      section {
         width: 100%;
         height: 100%;
       }
@@ -118,6 +115,12 @@ body {
       border-radius: 5px;
       border-color: inherit;
       cursor: pointer;
+    }
+
+    .users_wrapper {
+      width: 100%;
+      height: 100%;
+      text-align: center;
     }
 
     .page_classification {
@@ -148,182 +151,60 @@ body {
       color: #333333;
       font-size: 3vh;
     }
+  }
 
-    .users_wrapper,
-    .Users {
-      width: 100%;
-      height: 100%;
-      text-align: center;
+  .margin_right {
+    margin-right: 20px;
+  }
 
-      .main_wrapper {
-        display: flex;
+  .justify-between {
+    justify-content: space-between;
+  }
 
-        .users__list--div {
-          background-color: white;
+  .first_letters {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #bfe4e8;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-          .search_block {
-            display: flex;
-            justify-content: flex-start;
-            padding: 15px 5px;
+    p {
+      color: #2ca5b4;
+      font-weight: bold;
+    }
+  }
 
-            input {
-              height: 30px;
-              width: 70%;
-              border: rgb(193, 184, 184) solid 1px;
-              border-radius: 5px;
-              margin-left: 10px;
-            }
+  .online_status {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #2ca5b4;
+    margin-right: 10px;
+  }
 
-            .popup_wrapper {
-              width: 30%;
-              height: 33px;
-              display: flex;
-              justify-content: flex-end;
-              align-items: center;
+  .ofline_status {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #d16a42;
+    margin-right: 10px;
+  }
 
-              .popup_button_wrapper {
-                width: 30px;
-                height: 30px;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                border-radius: 25px;
-                border: 1px solid rgb(214, 214, 214);
-                cursor: pointer;
-                margin-right: -15px;
-                background-color: white;
+  .users_names {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    cursor: pointer;
 
-                .popup_button {
-                  width: 20px;
-                  height: 20px;
-                  background-image: url("./img/Klappen_rechts2.svg");
-                  background-repeat: no-repeat;
-                  border: none;
-                }
-              }
-            }
-          }
+    :first-child {
+      font-weight: 500;
+    }
 
-          ul {
-            margin: 0;
-            padding: 0 10px;
-
-            li {
-              padding: 10px;
-              display: flex;
-              align-items: center;
-              list-style: none;
-              border-top: #ededed solid 1px;
-
-              .first_letters {
-                width: 40px;
-                height: 40px;
-                border-radius: 30px;
-                background-color: #bfe4e8;
-                margin-right: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                p {
-                  color: #2ca5b4;
-                  font-weight: bold;
-                }
-              }
-
-              .online_status {
-                width: 12px;
-                height: 12px;
-                border-radius: 10px;
-                background-color: #2ca5b4;
-                margin-right: 10px;
-              }
-
-              .ofline_status {
-                width: 12px;
-                height: 12px;
-                border-radius: 10px;
-                background-color: #d16a42;
-                margin-right: 10px;
-              }
-
-              .users_names {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                cursor: pointer;
-
-                :first-child {
-                  font-weight: 500;
-                }
-
-                p {
-                  margin: 0;
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .margin_right {
-        margin-right: 20px;
-      }
-
-      .justify-between {
-        justify-content: space-between;
-      }
-
-      .users-main_div {
-        display: block;
-        width: 65%;
-        text-align: center;
-        margin-top: 10%;
-
-        .logoImage_wrapper {
-          display: flex;
-          justify-content: center;
-
-          .user-login-image {
-            width: 350px;
-            height: 200px;
-            background-image: url("./img/Gruppe 3987.svg");
-            background-repeat: no-repeat;
-            text-align: center;
-          }
-        }
-
-        .user-text {
-          font-size: large;
-          font-weight: 600;
-          text-align: center;
-        }
-
-        .button_wrapper {
-          display: flex;
-          justify-content: center;
-
-          a {
-            text-decoration: none;
-          }
-
-          .add-user_button {
-            display: flex;
-            align-items: center;
-            width: 210px;
-            height: 30px;
-            background-color: $dark-green;
-            color: #ffffff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-
-            :first-child {
-              width: 40%;
-            }
-          }
-        }
-      }
+    p {
+      margin: 0;
     }
   }
 }

@@ -1,7 +1,21 @@
+import { useContext } from "react";
+import { UsersContext } from "../../App/App";
+import styles from "./UserManagement.module.scss";
+
 function UserManagement() {
+  const { users, firstLetters } = useContext(UsersContext);
+  const titles = ["Name", "Email", "Roles", "Phone"];
+
+  // function checkOnline(arr) {
+  //   let newArr = arr.map((el) => Number(el.address.zipcode[0]));
+  //   return newArr.filter((el) => el === 5);
+  // }
+
+  // console.log(checkOnline(users));
+
   return (
-    <div className="user-manag_wrapper">
-      <div className="select_inputs">
+    <div className={styles.wrapper}>
+      <div className={styles.select_inputs}>
         <select name="search">
           <option value="" disabled hidden>
             Select State
@@ -20,12 +34,43 @@ function UserManagement() {
         </select>
       </div>
 
-      <div className="titles">
-        <p>Name</p>
-        <p>Email</p>
-        <p>Roles</p>
-        <p>Created at</p>
+      <div className={styles.titles}>
+        <ul>
+          {titles.map((el, i) => (
+            <li key={i}>{el}</li>
+          ))}
+        </ul>
       </div>
+
+      <ul className={styles.users_content}>
+        {users.map((el, i) => (
+          <li key={i}>
+            <div className={styles.name}>
+              <div className="first_letters">
+                <p>{firstLetters(el.name)}</p>
+              </div>
+              <div
+                className={
+                  el.address.zipcode.startsWith(
+                    Math.floor(Math.random() * 10).toString()
+                  )
+                    ? "ofline_status"
+                    : "online_status"
+                }
+              ></div>
+              <div className="users_names">
+                <p>{el.name}</p>
+              </div>
+            </div>
+            <div className={styles.email}>{el.email}</div>
+            <div className={styles.roles}>
+              <p>{el.address.suite}</p>
+              <p>{el.address.street}</p>
+            </div>
+            <div className={styles.phone}>{el.address.zipcode}</div>
+          </li>
+        ))}
+      </ul>
 
       {/* <button onClick={handleClick}>Открыть окно</button>
       {isOpen && <div className="modal">Контент окна</div>} */}

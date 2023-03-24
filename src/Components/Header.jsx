@@ -1,6 +1,6 @@
 export const Header = () => {
   return (
-    <header className="main_header">
+    <header>
       <div className="user_management">
         <svg width="35" height="30" xmlns="http://www.w3.org/2000/svg">
           <g>

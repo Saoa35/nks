@@ -149,11 +149,8 @@ const Form = () => {
           <div>
             <div className={styles.users_info}>
               <input type="text" placeholder="Surname" {...surName} />
-
               <input type="text" placeholder="Firstname" {...firstName} />
-
               <input type="text" placeholder="Username" {...userName} />
-
               <input type="email" placeholder="Email adress" {...email} />
             </div>
 

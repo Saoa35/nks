@@ -2,9 +2,6 @@ import React from "react";
 import styles from "./UserRoles.module.scss";
 
 export const UserRoles = () => {
-  // this.handleChange = this.handleChange.bind(this);
-  // }
-
   // handleChange(e) {
   //   const { type, checked, name, value } = e.target;
   //   const currValue = type ==='checkbox' ? checked : value;
@@ -27,43 +24,23 @@ export const UserRoles = () => {
       <div className={styles.roles_main}>
         <div className={styles.roles_list}>
           <li className={styles.major_li}>
-            <input
-              type="checkbox"
-              id="access"
-              name="access"
-              // value={this.state.access}
-              // onChange={this.handleChange}
-            />
+            <input type="checkbox" id="access" name="access" />
             <label> .ACCESS</label>
             <div className={styles.minor_div}>
-              <input
-                type="checkbox"
-                id="accessManager"
-                name="accessManager"
-                // value={this.state.accessManager}
-                // onChange={this.handleChange}
-              />
+              <input type="checkbox" id="accessManager" name="accessManager" />
               <p></p>
               <label> Access Manager</label>
             </div>
           </li>
 
           <li className={styles.major_li}>
-            <input
-              type="checkbox"
-              id="card"
-              name="card"
-              // value={this.state.card}
-              // onChange={this.handleChange}
-            />
+            <input type="checkbox" id="card" name="card" />
             <label> .CARD</label>
             <div className={styles.minor_div}>
               <input
                 type="checkbox"
                 id="cardManagement"
                 name="cardManagement"
-                // value={this.state.cardManagement}
-                // onChange={this.handleChange}
               />
               <p></p>
               <label> Card Management</label>
@@ -71,13 +48,7 @@ export const UserRoles = () => {
           </li>
 
           <li className={styles.major_li}>
-            <input
-              type="checkbox"
-              id="certify"
-              name="certify"
-              // value={this.state.certify}
-              // onChange={this.handleChange}
-            />
+            <input type="checkbox" id="certify" name="certify" />
             <label> .СERTIFY</label>
           </li>
         </div>

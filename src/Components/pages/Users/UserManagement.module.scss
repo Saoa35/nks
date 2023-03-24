@@ -1,0 +1,81 @@
+.wrapper {
+  width: 97%;
+  height: 100%;
+  background-color: white;
+
+  .select_inputs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+
+    select {
+      width: 30vh;
+      height: 4.5vh;
+      margin-left: 20px;
+      border-radius: 5px;
+    }
+  }
+
+  .titles {
+    padding: 0 55px;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      color: #afafaf;
+      font-weight: bold;
+      list-style: none;
+    }
+  }
+
+  .users_content {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: #ededed solid 1px;
+      padding: 7px 25px;
+
+      .name {
+        display: flex;
+        align-items: center;
+      }
+
+      .email {
+        font-size: 14px;
+        color: #414040;
+      }
+
+      .roles {
+        display: flex;
+
+        p {
+          font-size: 13px;
+          font-weight: 500;
+          color: #605f5f;
+          background-color: #bfe4e8;
+          padding: 5px 12px;
+          border-radius: 18px;
+        }
+        :last-child {
+          margin-left: 10px;
+        }
+      }
+
+      .phone {
+        font-size: 13px;
+        color: #414040;
+      }
+    }
+  }
+}

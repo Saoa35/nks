@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { UsersContext } from "../../App/App";
+import UserManagement from "./UserManagement";
+import styles from "./Users.module.scss";
 
 export const Users = () => {
-  const [users, setUsers] = useState([]);
+  const { users, firstLetters } = useContext(UsersContext);
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,18 +17,6 @@ export const Users = () => {
     setSearch(e.target.value);
   };
 
-  useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((data) => data.json())
-      .then((obj) => setUsers(obj))
-      .catch((error) => console.error(error));
-  }, []);
-
-  function firstLetters(str) {
-    const firstLet = str.split(" ").map((el) => (el = el[0]));
-    return firstLet.join("");
-  }
-
   const usersList = users
     .filter((obj) => obj.name.toLowerCase().includes(search.toLowerCase()))
     .map((el, i) => (
@@ -35,7 +26,9 @@ export const Users = () => {
         </div>
         <div
           className={
-            el.address.zipcode.startsWith("5")
+            el.address.zipcode.startsWith(
+              Math.floor(Math.random() * 10).toString()
+            )
               ? "ofline_status"
               : "online_status"
           }
@@ -48,7 +41,7 @@ export const Users = () => {
     ));
 
   return (
-    <div className="Users">
+    <div className={styles.Users}>
       <div className="page_classification justify-between">
         <p className="page_name">Users</p>
         <Link to="/forms">
@@ -80,31 +73,32 @@ export const Users = () => {
           </button>
         </Link>
       </div>
-      <div className="main_wrapper">
-        <div className="users__list--div">
-          <div className="search_block">
+      <UserManagement />
+      {/* <div className={styles.main_wrapper}>
+        <div className={styles.users_list}>
+          <div className={styles.search_block}>
             <input
               type="text"
               onChange={handleChange}
               value={search}
               placeholder="  Search"
             />
-            <div className="popup_wrapper">
-              <div className="popup_button_wrapper" onClick={handleClick}>
-                <p className="popup_button"></p>
+            <div className={styles.popup_wrapper}>
+              <div className={styles.button_wrapper} onClick={handleClick}>
+                <p className={styles.popup_button}></p>
               </div>
             </div>
           </div>
           <ul>{usersList}</ul>
         </div>
-        <div className="users-main_div">
-          <div className="logoImage_wrapper">
-            <p className="user-login-image"></p>
+        <div className={styles.users_main}>
+          <div className={styles.logoImage_wrapper}>
+            <p className={styles.login_image}></p>
           </div>
-          <p className="user-text">Add a new user</p>
-          <div className="button_wrapper">
+          <p className={styles.user_text}>Add a new user</p>
+          <div className={styles.button_wrapper}>
             <Link to="/forms">
-              <div className="add-user_button ">
+              <div className={styles.add_button}>
                 <p>
                   <svg
                     width="25"
@@ -158,7 +152,7 @@ export const Users = () => {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

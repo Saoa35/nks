@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const LeftBar = () => {
   return (
-    <aside className="main_aside">
+    <aside>
       <Link to="/">
         <li>
           <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@ export const LeftBar = () => {
           </svg>
         </li>
       </Link>
-      <li className="last_li">
+      <li className="green_arrow">
         <p></p>
       </li>
     </aside>
