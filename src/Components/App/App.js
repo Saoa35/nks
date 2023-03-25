@@ -4,6 +4,7 @@ import { Header } from "../Header";
 import { LeftBar } from "../LeftBar";
 import { ApSysRol } from "../pages/AplSystandRoles/ApSysRol";
 import Form from "../pages/Form/Form";
+import UserManagement from "../pages/Users/UserManagement";
 import { Users } from "../pages/Users/Users";
 import UsRoles from "../pages/UsRoles/UsRoles";
 
@@ -37,6 +38,7 @@ function App() {
                 <Route path="/forms" element={<Form />} />
                 <Route path="/user-roles" element={<UsRoles />} />
                 <Route path="/apl-sys-roles" element={<ApSysRol />} />
+                <Route path="/user-management" element={<UserManagement />} />
               </Routes>
             </div>
           </section>

@@ -1,7 +1,9 @@
+import styles from "./Header.module.scss";
+
 export const Header = () => {
   return (
     <header>
-      <div className="user_management">
+      <div className={styles.user_management}>
         <svg width="35" height="30" xmlns="http://www.w3.org/2000/svg">
           <g>
             <rect
@@ -129,7 +131,7 @@ export const Header = () => {
         </svg>
         <p>Usermanagement</p>
       </div>
-      <div className="user_initials">
+      <div className={styles.user_initials}>
         <p>JH</p>
       </div>
     </header>

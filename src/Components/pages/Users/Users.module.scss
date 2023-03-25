@@ -5,65 +5,38 @@ $dark-green: #2ca5b4;
   height: 100%;
   text-align: center;
 
-  .main_wrapper {
-    display: flex;
+  .container {
+    .main_wrapper {
+      display: flex;
 
-    .users_list {
-      background-color: white;
+      .users_list {
+        background-color: white;
 
-      .search_block {
-        display: flex;
-        justify-content: flex-start;
-        padding: 15px 5px;
-
-        input {
-          height: 30px;
-          width: 70%;
-          border: rgb(193, 184, 184) solid 1px;
-          border-radius: 5px;
-          margin-left: 10px;
-        }
-
-        .popup_wrapper {
-          width: 30%;
-          height: 33px;
+        .search_block {
           display: flex;
-          justify-content: flex-end;
-          align-items: center;
+          justify-content: flex-start;
+          padding: 15px 5px;
 
-          .button_wrapper {
-            width: 30px;
+          input {
             height: 30px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            border-radius: 25px;
-            border: 1px solid rgb(214, 214, 214);
-            cursor: pointer;
-            margin-right: -15px;
-            background-color: white;
-
-            .popup_button {
-              width: 20px;
-              height: 20px;
-              background-image: url("../../../img/Klappen_rechts2.svg");
-              background-repeat: no-repeat;
-              border: none;
-            }
+            width: 70%;
+            border: rgb(193, 184, 184) solid 1px;
+            border-radius: 5px;
+            margin-left: 10px;
           }
         }
-      }
 
-      ul {
-        margin: 0;
-        padding: 0 10px;
+        ul {
+          margin: 0;
+          padding: 0 10px;
 
-        li {
-          padding: 10px;
-          display: flex;
-          align-items: center;
-          list-style: none;
-          border-top: #ededed solid 1px;
+          li {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            border-top: #ededed solid 1px;
+          }
         }
       }
     }

@@ -6,13 +6,6 @@ function UserManagement() {
   const { users, firstLetters } = useContext(UsersContext);
   const titles = ["Name", "Email", "Roles", "Phone"];
 
-  // function checkOnline(arr) {
-  //   let newArr = arr.map((el) => Number(el.address.zipcode[0]));
-  //   return newArr.filter((el) => el === 5);
-  // }
-
-  // console.log(checkOnline(users));
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.select_inputs}>
@@ -32,6 +25,12 @@ function UserManagement() {
           <option value="roles">Roles</option>
           <option value="state">State</option>
         </select>
+
+        <div className="popup_wrapper">
+          <div className="button_wrapper">
+            <p className="popup_button"></p>
+          </div>
+        </div>
       </div>
 
       <div className={styles.titles}>
