@@ -12,6 +12,11 @@ export const UsersContext = React.createContext("");
 
 function App() {
   const [users, setUsers] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -27,7 +32,9 @@ function App() {
 
   return (
     <div className="App">
-      <UsersContext.Provider value={{ users, firstLetters }}>
+      <UsersContext.Provider
+        value={{ users, firstLetters, isOpen, handleClick }}
+      >
         <Header />
         <main>
           <LeftBar />

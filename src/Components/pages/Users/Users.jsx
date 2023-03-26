@@ -5,13 +5,8 @@ import UserManagement from "./UserManagement";
 import styles from "./Users.module.scss";
 
 export const Users = () => {
-  const { users, firstLetters } = useContext(UsersContext);
+  const { users, firstLetters, isOpen, handleClick } = useContext(UsersContext);
   const [search, setSearch] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-  };
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -88,11 +83,9 @@ export const Users = () => {
                   placeholder="  Search"
                 />
                 <div className="popup_wrapper">
-                  <Link to="/user-management">
-                    <div className="button_wrapper" onClick={handleClick}>
-                      <p className="popup_button"></p>
-                    </div>
-                  </Link>
+                  <div className="button_wrapper" onClick={handleClick}>
+                    <p className="popup_button"></p>
+                  </div>
                 </div>
               </div>
               <ul>{usersList}</ul>
