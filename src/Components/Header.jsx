@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import { UsersContext } from "./App/App";
 import styles from "./Header.module.scss";
 
 export const Header = () => {
+  console.log("Header rerender");
+
+  const { handleClick } = useContext(UsersContext);
+
   return (
     <header>
       <div className={styles.user_management}>
@@ -129,7 +135,7 @@ export const Header = () => {
             />
           </g>
         </svg>
-        <p>Usermanagement</p>
+        <p onClick={handleClick}>Usermanagement</p>
       </div>
       <div className={styles.user_initials}>
         <p>JH</p>

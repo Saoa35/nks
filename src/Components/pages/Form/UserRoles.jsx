@@ -11,6 +11,8 @@ export const UserRoles = () => {
   //   })
   // }
 
+  console.log("UserRoles rerender");
+
   return (
     <div className={styles.user_roles}>
       <p className={styles.user_header}>Applications, Systems and User Roles</p>

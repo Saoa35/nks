@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 export const LeftBar = () => {
+  console.log("LeftBar rerander");
+
   return (
     <aside>
       <Link to="/">

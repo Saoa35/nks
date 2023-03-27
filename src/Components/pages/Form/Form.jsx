@@ -10,6 +10,8 @@ function useInput(initialValue) {
 }
 
 const Form = () => {
+  console.log("Form rerender");
+
   const surName = useInput("");
   const firstName = useInput("");
   const userName = useInput("");

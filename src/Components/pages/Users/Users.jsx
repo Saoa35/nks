@@ -5,6 +5,8 @@ import UserManagement from "./UserManagement";
 import styles from "./Users.module.scss";
 
 export const Users = () => {
+  console.log("Users rerender");
+
   const { users, firstLetters, isOpen, handleClick } = useContext(UsersContext);
   const [search, setSearch] = useState("");
 
@@ -80,7 +82,7 @@ export const Users = () => {
                   type="text"
                   onChange={handleChange}
                   value={search}
-                  placeholder="  Search"
+                  placeholder="Search"
                 />
                 <div className="popup_wrapper">
                   <div className="button_wrapper" onClick={handleClick}>

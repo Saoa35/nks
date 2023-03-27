@@ -3,6 +3,7 @@ import { UsersContext } from "../../App/App";
 import styles from "./UserManagement.module.scss";
 
 function UserManagement() {
+  console.log("UserManagement rerender");
   const { users, firstLetters, handleClick } = useContext(UsersContext);
   const titles = ["Name", "Email", "Roles", "Phone"];
 
