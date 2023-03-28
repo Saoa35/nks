@@ -1,8 +1,8 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { UsersContext } from "./App/App";
 import styles from "./Header.module.scss";
 
-export const Header = () => {
+export const Header = memo(() => {
   console.log("Header rerender");
 
   const { handleClick } = useContext(UsersContext);
@@ -142,4 +142,4 @@ export const Header = () => {
       </div>
     </header>
   );
-};
+});

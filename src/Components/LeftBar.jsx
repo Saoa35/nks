@@ -1,6 +1,7 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 
-export const LeftBar = () => {
+export const LeftBar = memo(() => {
   console.log("LeftBar rerander");
 
   return (
@@ -149,4 +150,4 @@ export const LeftBar = () => {
       </li>
     </aside>
   );
-};
+});

@@ -1,10 +1,11 @@
-import { useContext, useState } from "react";
+import { memo, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../../App/App";
-import UserManagement from "./UserManagement";
+import PopupButton from "./PopupButton";
+import UserManagement from "./UserManagement/UserManagement";
 import styles from "./Users.module.scss";
 
-export const Users = () => {
+export const Users = memo(() => {
   console.log("Users rerender");
 
   const { users, firstLetters, isOpen, handleClick } = useContext(UsersContext);
@@ -18,21 +19,26 @@ export const Users = () => {
     .filter((obj) => obj.name.toLowerCase().includes(search.toLowerCase()))
     .map((el, i) => (
       <li key={i}>
-        <div className="first_letters">
-          <p>{firstLetters(el.name)}</p>
+        <div className={styles.user_container}>
+          <div className="first_letters">
+            <p>{firstLetters(el.name)}</p>
+          </div>
+          <div
+            className={
+              el.address.zipcode.startsWith(
+                Math.floor(Math.random() * 10).toString()
+              )
+                ? "ofline_status"
+                : "online_status"
+            }
+          ></div>
+          <div className="users_names">
+            <p>{el.name}</p>
+            <p>{el.company.name}</p>
+          </div>
         </div>
-        <div
-          className={
-            el.address.zipcode.startsWith(
-              Math.floor(Math.random() * 10).toString()
-            )
-              ? "ofline_status"
-              : "online_status"
-          }
-        ></div>
-        <div className="users_names">
-          <p>{el.name}</p>
-          <p>{el.company.name}</p>
+        <div className={styles.popup}>
+          <PopupButton />
         </div>
       </li>
     ));
@@ -158,4 +164,4 @@ export const Users = () => {
       </div>
     </div>
   );
-};
+});

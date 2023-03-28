@@ -195,4 +195,59 @@ body {
       }
     }
   }
+
+  .popup-button-container {
+    position: relative;
+    display: inline-block;
+
+    .popup-button {
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+
+      .popup-button-icon {
+        display: block;
+        width: 20px;
+        height: 20px;
+        background-image: url("./img/three_dots_vertical_icon_159806.svg");
+        background-repeat: no-repeat;
+      }
+    }
+
+    .popup-content {
+      position: absolute;
+      top: 45%;
+      right: 0;
+      width: 200px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 1;
+      display: none;
+
+      .popup-menue {
+        display: flex;
+        align-items: center;
+        margin: 15px;
+
+        p {
+          cursor: pointer;
+          margin: 0;
+        }
+
+        :last-child {
+          color: #000000;
+          font-size: 14px;
+          font-weight: 500;
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .popup-button:hover + .popup-content,
+    .popup-content:hover {
+      display: block;
+    }
+  }
 }

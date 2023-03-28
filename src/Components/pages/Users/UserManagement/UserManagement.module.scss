@@ -46,42 +46,48 @@
     padding: 0;
 
     li {
-      padding: 10px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      padding: 10px;
       border-bottom: #ededed solid 1px;
-      padding: 7px 25px;
 
-      .name {
+      .container {
+        width: 98%;
         display: flex;
         align-items: center;
-      }
+        justify-content: space-between;
+        padding: 7px 25px;
 
-      .email {
-        font-size: 14px;
-        color: #414040;
-      }
+        .name {
+          display: flex;
+          align-items: center;
+        }
 
-      .roles {
-        display: flex;
+        .email {
+          font-size: 14px;
+          color: #414040;
+        }
 
-        p {
+        .roles {
+          display: flex;
+
+          p {
+            font-size: 13px;
+            font-weight: 500;
+            color: #605f5f;
+            background-color: #bfe4e8;
+            padding: 5px 12px;
+            border-radius: 18px;
+          }
+          :last-child {
+            margin-left: 10px;
+          }
+        }
+
+        .phone {
           font-size: 13px;
-          font-weight: 500;
-          color: #605f5f;
-          background-color: #bfe4e8;
-          padding: 5px 12px;
-          border-radius: 18px;
+          color: #414040;
         }
-        :last-child {
-          margin-left: 10px;
-        }
-      }
-
-      .phone {
-        font-size: 13px;
-        color: #414040;
       }
     }
   }

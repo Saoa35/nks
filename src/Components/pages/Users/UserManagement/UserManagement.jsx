@@ -1,5 +1,6 @@
-import { useContext } from "react";
-import { UsersContext } from "../../App/App";
+import { memo, useContext } from "react";
+import { UsersContext } from "../../../App/App";
+import PopupButton from "../PopupButton";
 import styles from "./UserManagement.module.scss";
 
 function UserManagement() {
@@ -56,29 +57,32 @@ function UserManagement() {
       <ul className={styles.users_content}>
         {users.map((el, i) => (
           <li key={i}>
-            <div className={styles.name}>
-              <div className="first_letters">
-                <p>{firstLetters(el.name)}</p>
+            <div className={styles.container}>
+              <div className={styles.name}>
+                <div className="first_letters">
+                  <p>{firstLetters(el.name)}</p>
+                </div>
+                <div
+                  className={
+                    el.address.zipcode.startsWith(
+                      Math.floor(Math.random() * 10).toString()
+                    )
+                      ? "ofline_status"
+                      : "online_status"
+                  }
+                ></div>
+                <div className="users_names">
+                  <p>{el.name}</p>
+                </div>
               </div>
-              <div
-                className={
-                  el.address.zipcode.startsWith(
-                    Math.floor(Math.random() * 10).toString()
-                  )
-                    ? "ofline_status"
-                    : "online_status"
-                }
-              ></div>
-              <div className="users_names">
-                <p>{el.name}</p>
+              <div className={styles.email}>{el.email}</div>
+              <div className={styles.roles}>
+                <p>{el.address.suite}</p>
+                <p>{el.address.street}</p>
               </div>
+              <div className={styles.phone}>{el.address.zipcode}</div>
             </div>
-            <div className={styles.email}>{el.email}</div>
-            <div className={styles.roles}>
-              <p>{el.address.suite}</p>
-              <p>{el.address.street}</p>
-            </div>
-            <div className={styles.phone}>{el.address.zipcode}</div>
+            <PopupButton />
           </li>
         ))}
       </ul>
@@ -86,4 +90,4 @@ function UserManagement() {
   );
 }
 
-export default UserManagement;
+export default memo(UserManagement);

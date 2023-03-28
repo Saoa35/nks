@@ -32,11 +32,22 @@ $dark-green: #2ca5b4;
           padding: 0 10px;
 
           li {
-            padding: 10px;
+            padding: 10px 0 10px 10px;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             list-style: none;
             border-top: #ededed solid 1px;
+
+            .user_container {
+              display: flex;
+              align-items: center;
+            }
+
+            .popup {
+              display: flex;
+              align-items: center;
+            }
           }
         }
       }
