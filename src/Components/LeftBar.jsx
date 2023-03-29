@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { Link } from "react-router-dom";
+import styles from "./LeftBar.module.scss";
 
 export const LeftBar = memo(() => {
   console.log("LeftBar rerander");
@@ -145,7 +146,7 @@ export const LeftBar = memo(() => {
           </svg>
         </li>
       </Link>
-      <li className="green_arrow">
+      <li className={styles.green_arrow}>
         <p></p>
       </li>
     </aside>

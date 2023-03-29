@@ -1,0 +1,36 @@
+aside {
+  width: 60px;
+  height: inherit;
+  background-color: #e8e8e8;
+  display: flex;
+  flex-direction: column;
+
+  a {
+    text-decoration: none;
+  }
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 55px;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .green_arrow {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    p {
+      width: 20px;
+      height: 20px;
+      background-image: url("../img/Klappen_rechts.svg");
+      background-repeat: no-repeat;
+      cursor: pointer;
+    }
+  }
+}
