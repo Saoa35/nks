@@ -11,6 +11,7 @@ $dark-green: #2ca5b4;
 
       .users_list {
         background-color: white;
+        width: 30%;
 
         .search_block {
           display: flex;
@@ -56,11 +57,10 @@ $dark-green: #2ca5b4;
 
   .users_main {
     display: block;
-    width: 65%;
-    text-align: center;
-    margin-top: 10%;
+    width: 70%;
 
     .logoImage_wrapper {
+      margin-top: 15%;
       display: flex;
       justify-content: center;
 

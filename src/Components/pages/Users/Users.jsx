@@ -1,6 +1,7 @@
 import { memo, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { UsersContext } from "../../App/App";
+import { Information } from "./Information/Information";
 import PopupButton from "./PopupButton";
 import UserManagement from "./UserManagement/UserManagement";
 import styles from "./Users.module.scss";
@@ -10,9 +11,14 @@ export const Users = memo(() => {
 
   const { users, firstLetters, isOpen, handleClick } = useContext(UsersContext);
   const [search, setSearch] = useState("");
+  const [name, setName] = useState("");
 
   const handleChange = (e) => {
     setSearch(e.target.value);
+  };
+
+  const getName = (event) => {
+    setName(event.target.textContent);
   };
 
   const usersList = users
@@ -33,7 +39,7 @@ export const Users = memo(() => {
             }
           ></div>
           <div className="users_names">
-            <p>{el.name}</p>
+            <p onClick={getName}>{el.name}</p>
             <p>{el.company.name}</p>
           </div>
         </div>
@@ -99,7 +105,8 @@ export const Users = memo(() => {
               <ul>{usersList}</ul>
             </div>
             <div className={styles.users_main}>
-              <div className={styles.logoImage_wrapper}>
+              <Information name={name} />
+              {/* <div className={styles.logoImage_wrapper}>
                 <p className={styles.login_image}></p>
               </div>
               <p className={styles.user_text}>Add a new user</p>
@@ -157,7 +164,7 @@ export const Users = memo(() => {
                     <p>Create User</p>
                   </div>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         )}
