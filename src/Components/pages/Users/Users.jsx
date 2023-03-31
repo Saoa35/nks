@@ -11,14 +11,14 @@ export const Users = memo(() => {
 
   const { users, firstLetters, isOpen, handleClick } = useContext(UsersContext);
   const [search, setSearch] = useState("");
-  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
 
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
 
   const getName = (event) => {
-    setName(event.target.textContent);
+    setUserName(event.target.textContent);
   };
 
   const usersList = users
@@ -105,7 +105,7 @@ export const Users = memo(() => {
               <ul>{usersList}</ul>
             </div>
             <div className={styles.users_main}>
-              <Information name={name} />
+              <Information userName={userName} firstLetters={firstLetters} />
               {/* <div className={styles.logoImage_wrapper}>
                 <p className={styles.login_image}></p>
               </div>

@@ -4,11 +4,86 @@
 
   header {
     display: flex;
+    justify-content: flex-start;
     background-color: #f0f0f0;
+    color: #888888;
+    font-size: 13px;
+    font-weight: 500;
+
+    p {
+      cursor: pointer;
+    }
+
+    :last-child {
+      margin-left: 10vw;
+    }
   }
 
-  .name {
+  main {
     background-color: white;
     display: flex;
+    flex-direction: column;
+
+    .name {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 30px;
+
+      .user_name {
+        display: flex;
+
+        .first_leters {
+          width: 70px;
+          height: 70px;
+          border-radius: 40px;
+          background-color: #bfe4e8;
+          margin-right: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #2ca5b4;
+          font-weight: bold;
+          font-size: 3vh;
+        }
+      }
+
+      .online_status {
+        display: flex;
+      }
+    }
+
+    .info_head {
+      display: flex;
+      justify-content: flex-start;
+      padding: 0 30px 10px 30px;
+      margin-top: 0;
+      border-bottom: 1px solid #f0f0f0;
+      color: #000000;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    .information {
+      display: flex;
+      // justify-content: space-around;
+      margin-bottom: 4vh;
+
+      div {
+        margin-left: 30px;
+        margin-right: 20px;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: flex-start;
+        // margin: 0;
+        // padding: 0;
+
+        p {
+          display: flex;
+          justify-content: flex-start;
+          // margin: 0;
+          // padding: 5px;
+        }
+      }
+    }
   }
 }
