@@ -12,9 +12,15 @@ export const UsersContext = React.createContext("");
 function App() {
   const [users, setUsers] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [isPicked, setIsPicked] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const changeStateToFalse = () => {
+    setIsPicked(false);
+    setIsOpen(false);
   };
 
   useEffect(() => {
@@ -32,11 +38,18 @@ function App() {
   return (
     <div className="App">
       <UsersContext.Provider
-        value={{ users, firstLetters, isOpen, handleClick }}
+        value={{
+          users,
+          firstLetters,
+          isOpen,
+          handleClick,
+          isPicked,
+          setIsPicked,
+        }}
       >
         <Header />
         <main>
-          <LeftBar />
+          <LeftBar changeStateToFalse={changeStateToFalse} />
           <section>
             <div className="main_field">
               <Routes>

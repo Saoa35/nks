@@ -9,7 +9,8 @@ import styles from "./Users.module.scss";
 export const Users = memo(() => {
   console.log("Users rerender");
 
-  const { users, firstLetters, isOpen, handleClick } = useContext(UsersContext);
+  const { users, firstLetters, isOpen, handleClick, isPicked, setIsPicked } =
+    useContext(UsersContext);
   const [search, setSearch] = useState("");
   const [userName, setUserName] = useState("");
 
@@ -38,7 +39,7 @@ export const Users = memo(() => {
                 : "online_status"
             }
           ></div>
-          <div className="users_names">
+          <div className="users_names" onClick={() => setIsPicked(true)}>
             <p onClick={getName}>{el.name}</p>
             <p>{el.company.name}</p>
           </div>
@@ -105,66 +106,71 @@ export const Users = memo(() => {
               <ul>{usersList}</ul>
             </div>
             <div className={styles.users_main}>
-              <Information userName={userName} firstLetters={firstLetters} />
-              {/* <div className={styles.logoImage_wrapper}>
-                <p className={styles.login_image}></p>
-              </div>
-              <p className={styles.user_text}>Add a new user</p>
-              <div className={styles.button_wrapper}>
-                <Link to="/forms">
-                  <div className={styles.add_button}>
-                    <p>
-                      <svg
-                        width="25"
-                        height="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <g>
-                          <title>Layer 1</title>
-                          <ellipse
-                            ry="5"
-                            rx="5"
-                            id="svg_1"
-                            cy="5.72494"
-                            cx="12.16951"
-                            stroke="#ffffff"
-                            fill="#2ca5b4"
-                          />
-                          <ellipse
-                            stroke="#ffffff"
-                            ry="4.23774"
-                            rx="11.70042"
-                            id="svg_2"
-                            cy="14.94669"
-                            cx="12.30277"
-                            fill="#2ca5b4"
-                          />
-                          <line
-                            id="svg_3"
-                            y2="8.20362"
-                            x2="31.86033"
-                            y1="8.15032"
-                            x1="21.78571"
-                            stroke="#ffffff"
-                            fill="none"
-                          />
-                          <line
-                            transform="rotate(0.709444 26.6631 7.9371)"
-                            stroke="#ffffff"
-                            id="svg_4"
-                            y2="13.00106"
-                            x2="26.68976"
-                            y1="2.87313"
-                            x1="26.63645"
-                            fill="none"
-                          />
-                        </g>
-                      </svg>
-                    </p>
-                    <p>Create User</p>
+              {isPicked ? (
+                <Information userName={userName} firstLetters={firstLetters} />
+              ) : (
+                <>
+                  <div className={styles.logoImage_wrapper}>
+                    <p className={styles.login_image}></p>
                   </div>
-                </Link>
-              </div> */}
+                  <p className={styles.user_text}>Add a new user</p>
+                  <div className={styles.button_wrapper}>
+                    <Link to="/forms">
+                      <div className={styles.add_button}>
+                        <p>
+                          <svg
+                            width="25"
+                            height="16"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <g>
+                              <title>Layer 1</title>
+                              <ellipse
+                                ry="5"
+                                rx="5"
+                                id="svg_1"
+                                cy="5.72494"
+                                cx="12.16951"
+                                stroke="#ffffff"
+                                fill="#2ca5b4"
+                              />
+                              <ellipse
+                                stroke="#ffffff"
+                                ry="4.23774"
+                                rx="11.70042"
+                                id="svg_2"
+                                cy="14.94669"
+                                cx="12.30277"
+                                fill="#2ca5b4"
+                              />
+                              <line
+                                id="svg_3"
+                                y2="8.20362"
+                                x2="31.86033"
+                                y1="8.15032"
+                                x1="21.78571"
+                                stroke="#ffffff"
+                                fill="none"
+                              />
+                              <line
+                                transform="rotate(0.709444 26.6631 7.9371)"
+                                stroke="#ffffff"
+                                id="svg_4"
+                                y2="13.00106"
+                                x2="26.68976"
+                                y1="2.87313"
+                                x1="26.63645"
+                                fill="none"
+                              />
+                            </g>
+                          </svg>
+                        </p>
+                        <p>Create User</p>
+                      </div>
+                    </Link>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         )}

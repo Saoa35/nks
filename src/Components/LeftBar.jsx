@@ -2,13 +2,13 @@ import { memo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./LeftBar.module.scss";
 
-export const LeftBar = memo(() => {
+export const LeftBar = memo(({ changeStateToFalse }) => {
   console.log("LeftBar rerander");
 
   return (
     <aside>
       <Link to="/">
-        <li>
+        <li onClick={changeStateToFalse}>
           <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
             <g>
               <title>Layer 1</title>
