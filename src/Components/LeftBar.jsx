@@ -11,7 +11,7 @@ export const LeftBar = memo(({ changeStateToFalse }) => {
         <li onClick={changeStateToFalse}>
           <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
             <g>
-              <title>Layer 1</title>
+              <title>Users</title>
               <ellipse
                 ry="3.32536"
                 rx="3.37321"
@@ -88,6 +88,7 @@ export const LeftBar = memo(({ changeStateToFalse }) => {
             viewBox="0 0 32 32"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>Roles</title>
             <path d="M23.5 5.023c-3.419 0-7.070 2.848-7.222 9.040h-14.278c-0.414 0-0.75 0.336-0.75 0.75v0 11.413c0 0.414 0.336 0.75 0.75 0.75h17.119c0.414-0 0.75-0.336 0.75-0.75v0-11.413c-0-0.414-0.336-0.75-0.75-0.75h-1.343c0.142-5.162 3.023-7.54 5.724-7.54 2.77 0 5.75 2.478 5.75 7.917 0 0.414 0.336 0.75 0.75 0.75s0.75-0.336 0.75-0.75v0c0-6.47-3.758-9.417-7.25-9.417zM18.369 25.477h-15.619v-9.913h15.619zM10.56 23.75c0.414-0 0.75-0.336 0.75-0.75v0-4c0-0.414-0.336-0.75-0.75-0.75s-0.75 0.336-0.75 0.75v0 4c0 0.414 0.336 0.75 0.75 0.75v0z"></path>
           </svg>
         </li>
@@ -96,7 +97,7 @@ export const LeftBar = memo(({ changeStateToFalse }) => {
         <li>
           <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
             <g>
-              <title>Layer 1</title>
+              <title>Aplications & Systems</title>
               <rect
                 id="svg_1"
                 height="5"

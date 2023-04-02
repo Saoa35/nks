@@ -1,9 +1,9 @@
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { UsersContext } from "../../../App/App";
 import PopupButton from "../PopupButton";
 import styles from "./Information.module.scss";
 
-export const Information = ({ userName, firstLetters }) => {
+export const Information = memo(({ userName, firstLetters }) => {
   console.log("Information rerender");
 
   const { users } = useContext(UsersContext);
@@ -24,14 +24,77 @@ export const Information = ({ userName, firstLetters }) => {
 
   const userDataByName = getDataByName(users, userName);
 
-  const Userroles = () => {
+  const Userroles = memo(() => {
     return (
       <div className={styles.wrapper}>
-        <div className={styles.user_headder}></div>
-        <div className={styles.roles}></div>
+        <div className={styles.user_headder}>
+          <p>Name</p>
+          <p>Systems and Aplications</p>
+        </div>
+        <div className={styles.roles}>
+          <div className={styles.roles_info}>
+            <p className="first_letters">
+              <svg width="25" height="25" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <title>Roles</title>
+                  <rect
+                    id="svg_1"
+                    height="5"
+                    width="5"
+                    y="4.94903"
+                    x="1.31629"
+                    stroke="#2fa6b5"
+                    fill="#bfe4e8"
+                  />
+                  <rect
+                    id="svg_7"
+                    height="5"
+                    width="5"
+                    y="4.94903"
+                    x="18.2835"
+                    stroke="#2fa6b5"
+                    fill="#bfe4e8"
+                  />
+                  <rect
+                    id="svg_8"
+                    height="5"
+                    width="5"
+                    y="15.44083"
+                    x="10.74252"
+                    stroke="#2fa6b5"
+                    fill="#bfe4e8"
+                  />
+                  <line
+                    id="svg_9"
+                    y2="7.33606"
+                    x2="15.68033"
+                    y1="7.41803"
+                    x1="6.41803"
+                    stroke="#2fa6b5"
+                    fill="none"
+                  />
+                  <line
+                    id="svg_10"
+                    y2="13.97541"
+                    x2="9.61475"
+                    y1="10.28688"
+                    x1="6.58197"
+                    stroke="#2fa6b5"
+                    fill="none"
+                  />
+                </g>
+              </svg>
+            </p>
+            <p>Role</p>
+            <p>Under Role</p>
+          </div>
+          <div className={styles.pop_up}>
+            <PopupButton />
+          </div>
+        </div>
       </div>
     );
-  };
+  });
 
   return (
     <div className={styles.container}>
@@ -40,7 +103,8 @@ export const Information = ({ userName, firstLetters }) => {
         <p>Userroles</p>
       </header>
       <main>
-        <section>
+        <Userroles />
+        {/* <section>
           <div className={styles.name}>
             <div className={styles.user_name}>
               <p className={styles.first_leters}>{firstLetters(userName)}</p>
@@ -83,8 +147,8 @@ export const Information = ({ userName, firstLetters }) => {
               <p>{getFormattedDate()}</p>
             </div>
           </div>
-        </section>
+        </section> */}
       </main>
     </div>
   );
-};
+});

@@ -1,6 +1,7 @@
 .container {
   width: 95%;
   margin-left: 2vw;
+  // height: fit-content;
 
   header {
     display: flex;
@@ -148,6 +149,28 @@
     }
 
     .wrapper {
+      padding: 0 15px;
+      width: 100%;
+
+      .user_headder {
+        display: flex;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      .roles {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .roles_info {
+          display: flex;
+          align-items: center;
+        }
+
+        .pop_up {
+          justify-self: flex-end;
+        }
+      }
     }
   }
 }
