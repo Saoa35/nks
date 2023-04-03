@@ -1,4 +1,4 @@
-import { memo, useContext } from "react";
+import { memo, useContext, useState } from "react";
 import { UsersContext } from "../../../App/App";
 import PopupButton from "../PopupButton";
 import styles from "./Information.module.scss";
@@ -7,6 +7,11 @@ export const Information = memo(({ userName, firstLetters }) => {
   console.log("Information rerender");
 
   const { users } = useContext(UsersContext);
+  const [isActive, setIsActive] = useState(false);
+
+  const handleActive = () => {
+    setIsActive(!isActive);
+  };
 
   function getFormattedDate() {
     const today = new Date();
@@ -85,8 +90,8 @@ export const Information = memo(({ userName, firstLetters }) => {
                 </g>
               </svg>
             </p>
-            <p>Role</p>
-            <p>Under Role</p>
+            <p>{userDataByName.address.suite}</p>
+            <p>{userDataByName.address.street}</p>
           </div>
           <div className={styles.pop_up}>
             <PopupButton />
@@ -98,56 +103,59 @@ export const Information = memo(({ userName, firstLetters }) => {
 
   return (
     <div className={styles.container}>
-      <header>
-        <p className="isActive">Information</p>
-        <p>Userroles</p>
+      <header onClick={handleActive}>
+        <p className={!isActive ? "isActive" : ""}>Information</p>
+        <p className={isActive ? "isActive" : ""}>Userroles</p>
       </header>
       <main>
-        <Userroles />
-        {/* <section>
-          <div className={styles.name}>
-            <div className={styles.user_name}>
-              <p className={styles.first_leters}>{firstLetters(userName)}</p>
-              <div>
-                <p>Name</p>
-                <p>{userName}</p>
+        {isActive ? (
+          <Userroles />
+        ) : (
+          <section>
+            <div className={styles.name}>
+              <div className={styles.user_name}>
+                <p className={styles.first_leters}>{firstLetters(userName)}</p>
+                <div>
+                  <p>Name</p>
+                  <p>{userName}</p>
+                </div>
               </div>
-            </div>
-            <div className={styles.online_status}>
-              <div className={styles.is_active}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0,0,256,256"
-                  width="20px"
-                  height="20px"
-                >
-                  <g fill="#ffffff">
-                    <g transform="scale(10.66667,10.66667)">
-                      <path d="M20.29297,5.29297l-11.29297,11.29297l-4.29297,-4.29297l-1.41406,1.41406l5.70703,5.70703l12.70703,-12.70703z"></path>
+              <div className={styles.online_status}>
+                <div className={styles.is_active}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0,0,256,256"
+                    width="20px"
+                    height="20px"
+                  >
+                    <g fill="#ffffff">
+                      <g transform="scale(10.66667,10.66667)">
+                        <path d="M20.29297,5.29297l-11.29297,11.29297l-4.29297,-4.29297l-1.41406,1.41406l5.70703,5.70703l12.70703,-12.70703z"></path>
+                      </g>
                     </g>
-                  </g>
-                </svg>
-                <p>Is active</p>
+                  </svg>
+                  <p>Is active</p>
+                </div>
+                <PopupButton />
               </div>
-              <PopupButton />
             </div>
-          </div>
-          <p className={styles.info_head}>Information</p>
-          <div className={styles.information}>
-            <div>
-              <p>Username</p>
-              <p>{userDataByName && userDataByName.username}</p>
+            <p className={styles.info_head}>Information</p>
+            <div className={styles.information}>
+              <div>
+                <p>Username</p>
+                <p>{userDataByName.username}</p>
+              </div>
+              <div>
+                <p>Email</p>
+                <p>{userDataByName.email}</p>
+              </div>
+              <div>
+                <p>Created at</p>
+                <p>{getFormattedDate()}</p>
+              </div>
             </div>
-            <div>
-              <p>Email</p>
-              <p>{userDataByName && userDataByName.email}</p>
-            </div>
-            <div>
-              <p>Created at</p>
-              <p>{getFormattedDate()}</p>
-            </div>
-          </div>
-        </section> */}
+          </section>
+        )}
       </main>
     </div>
   );

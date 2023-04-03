@@ -1,7 +1,6 @@
 .container {
   width: 95%;
   margin-left: 2vw;
-  // height: fit-content;
 
   header {
     display: flex;
@@ -155,6 +154,17 @@
       .user_headder {
         display: flex;
         border-bottom: 1px solid #e8e8e8;
+
+        p {
+          color: #9e9e9e;
+          font-size: 12px;
+          font-weight: 500;
+          margin-bottom: 2px;
+        }
+
+        :last-child {
+          margin-left: 16vw;
+        }
       }
 
       .roles {
@@ -165,6 +175,19 @@
         .roles_info {
           display: flex;
           align-items: center;
+
+          :nth-child(2) {
+            color: #333333;
+            margin-left: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            margin-right: 10vw;
+          }
+
+          :last-child {
+            color: #333333;
+            font-size: 14px;
+          }
         }
 
         .pop_up {
