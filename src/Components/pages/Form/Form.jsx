@@ -22,17 +22,18 @@ const Form = () => {
   const [errors, setErrors] = useState("");
   const [temporaryPassword, setTemporaryPassword] = useState(false);
 
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleIsClicked = () => {
+    setIsClicked(!isClicked);
+  };
+
   const onChangeTemporaryPassword = () => {
     setTemporaryPassword(!temporaryPassword);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    password !== confirmPassword
-      ? setErrors(
-          "The password you entered does not match with the confirmation"
-        )
-      : setErrors("");
     console.log(
       surName,
       firstName,
@@ -44,6 +45,11 @@ const Form = () => {
       temporaryPassword,
       errors
     );
+    return password !== confirmPassword
+      ? setErrors(
+          "The password you entered does not match with the confirmation"
+        )
+      : setErrors("");
   };
 
   return (
@@ -93,12 +99,10 @@ const Form = () => {
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
       </div>
       <div className={styles.form}>
-        <div className={styles.static_header}>
-          <div className={styles.user_information}>User Information</div>
-          <div style={{ width: "15%" }}>
-            <hr />
-          </div>
-          <div className={styles.user_roles}>
+        <div className={styles.static_header} onClick={handleIsClicked}>
+          <div className={!isClicked ? "isActive" : ""}>User Information</div>
+          <div></div>
+          <div className={isClicked ? "isActive" : ""}>
             Applications, Systems & User Roles
           </div>
         </div>

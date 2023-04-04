@@ -18,18 +18,24 @@ $dark-green: #2ca5b4;
       display: flex;
       justify-content: flex-start;
       align-items: center;
+      color: #9f9b9b;
 
-      .user_information {
-        margin-left: 20px;
-        margin-right: 20px;
-        color: $dark-green;
+      div {
+        margin-left: 3%;
+      }
+
+      :first-child,
+      :last-child {
+        margin-bottom: 0;
+        margin-top: 10px;
+        padding-bottom: 10px;
         cursor: pointer;
       }
 
-      .user_roles {
-        margin-left: 10px;
-        color: #9f9b9b;
-        cursor: pointer;
+      :nth-child(2) {
+        width: 10vw;
+        border: 1px solid #d9d8d8;
+        margin-top: 5px;
       }
     }
 
