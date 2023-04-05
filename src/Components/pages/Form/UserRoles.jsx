@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./UserRoles.module.scss";
 
-export const UserRoles = () => {
+export const UserRoles = memo(() => {
   // handleChange(e) {
   //   const { type, checked, name, value } = e.target;
   //   const currValue = type ==='checkbox' ? checked : value;
@@ -58,4 +58,4 @@ export const UserRoles = () => {
       </div>
     </div>
   );
-};
+});

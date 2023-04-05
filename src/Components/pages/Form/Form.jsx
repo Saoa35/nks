@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserRoles } from "./UserRoles";
 import styles from "./Form.module.scss";
@@ -23,9 +23,23 @@ const Form = () => {
   const [temporaryPassword, setTemporaryPassword] = useState(false);
 
   const [isClicked, setIsClicked] = useState(false);
+  const [isScrolledToTop, setIsScrolledToTop] = useState(false);
+
+  const userRef = useRef(null);
+  const targetRef = useRef(null);
+
+  const handleScroll = () => {
+    userRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+  };
+
+  const handleIntersection = (entries) => {
+    const [entry] = entries;
+    setIsScrolledToTop(!entry.isIntersecting);
+    setIsClicked(false);
+  };
 
   const handleIsClicked = () => {
-    setIsClicked(!isClicked);
+    setIsClicked(true);
   };
 
   const onChangeTemporaryPassword = () => {
@@ -51,6 +65,15 @@ const Form = () => {
         )
       : setErrors("");
   };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(handleIntersection);
+    let targetScroll = targetRef.current;
+    observer.observe(targetScroll);
+    return () => {
+      observer.unobserve(targetScroll);
+    };
+  }, []);
 
   return (
     <div className={styles.forms}>
@@ -99,10 +122,16 @@ const Form = () => {
         <p style={{ color: "#333333", fontSize: "3vh" }}>Create User</p>
       </div>
       <div className={styles.form}>
-        <div className={styles.static_header} onClick={handleIsClicked}>
-          <div className={!isClicked ? "isActive" : ""}>User Information</div>
+        <div
+          ref={targetRef}
+          className={styles.static_header}
+          onClick={handleIsClicked}
+        >
+          <div className={isScrolledToTop || !isClicked ? "isActive" : ""}>
+            User Information
+          </div>
           <div></div>
-          <div className={isClicked ? "isActive" : ""}>
+          <div className={isClicked ? "isActive" : ""} onClick={handleScroll}>
             Applications, Systems & User Roles
           </div>
         </div>
@@ -205,7 +234,7 @@ const Form = () => {
             <hr />
           </div>
 
-          <div>
+          <div ref={userRef} style={{ marginBottom: "60px" }}>
             <UserRoles />
           </div>
 
@@ -219,4 +248,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default memo(Form);
