@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserRoles } from "./UserRoles";
 import styles from "./Form.module.scss";
@@ -28,19 +28,19 @@ const Form = () => {
   const userRef = useRef(null);
   const targetRef = useRef(null);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     userRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
-  };
+  }, []);
 
-  const handleIntersection = (entries) => {
+  const handleIntersection = useCallback((entries) => {
     const [entry] = entries;
     setIsScrolledToTop(!entry.isIntersecting);
     setIsClicked(false);
-  };
+  }, []);
 
-  const handleIsClicked = () => {
+  const handleIsClicked = useCallback(() => {
     setIsClicked(true);
-  };
+  }, []);
 
   const onChangeTemporaryPassword = () => {
     setTemporaryPassword(!temporaryPassword);
@@ -73,7 +73,7 @@ const Form = () => {
     return () => {
       observer.unobserve(targetScroll);
     };
-  }, []);
+  }, [handleIntersection]);
 
   return (
     <div className={styles.forms}>
@@ -125,7 +125,7 @@ const Form = () => {
         <div
           ref={targetRef}
           className={styles.static_header}
-          onClick={handleIsClicked}
+          onClick={() => handleIsClicked}
         >
           <div className={isScrolledToTop || !isClicked ? "isActive" : ""}>
             User Information
@@ -234,7 +234,7 @@ const Form = () => {
             <hr />
           </div>
 
-          <div ref={userRef} style={{ marginBottom: "60px" }}>
+          <div className={styles.usrol_container} ref={userRef}>
             <UserRoles />
           </div>
 

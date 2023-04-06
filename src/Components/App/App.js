@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Header } from "../Header";
 import { LeftBar } from "../LeftBar";
@@ -14,14 +14,14 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [isPicked, setIsPicked] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     setIsOpen(!isOpen);
-  };
+  }, [isOpen]);
 
-  const changeStateToFalse = () => {
+  const changeStateToFalse = useCallback(() => {
     setIsPicked(false);
     setIsOpen(false);
-  };
+  }, []);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
