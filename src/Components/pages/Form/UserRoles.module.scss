@@ -20,20 +20,23 @@
   .roles_main {
     display: flex;
 
-    .roles_list {
+    ul {
       width: 50%;
       list-style: none;
+      margin-left: 0;
+      padding-left: 0;
 
-      .major_li {
+      li {
         margin-left: 15px;
         margin-bottom: 20px;
 
         input {
           width: 2.5vh;
           height: 2.5vh;
+          cursor: pointer;
         }
 
-        .minor_div {
+        div {
           margin-left: 20px;
           display: flex;
 

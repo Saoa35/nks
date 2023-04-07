@@ -1,5 +1,6 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
 import styles from "./UserRoles.module.scss";
+import { UsersContext } from "../../App/App";
 
 export const UserRoles = memo(() => {
   // handleChange(e) {
@@ -13,6 +14,8 @@ export const UserRoles = memo(() => {
 
   console.log("UserRoles rerender");
 
+  const { users } = useContext(UsersContext);
+
   return (
     <div className={styles.user_roles}>
       <p className={styles.user_header}>Applications, Systems and User Roles</p>
@@ -24,36 +27,19 @@ export const UserRoles = memo(() => {
         <p style={{ marginLeft: "20px" }}>Selected:</p>
       </div>
       <div className={styles.roles_main}>
-        <div className={styles.roles_list}>
-          <li className={styles.major_li}>
-            <input type="checkbox" id="access" name="access" />
-            <label> .ACCESS</label>
-            <div className={styles.minor_div}>
-              <input type="checkbox" id="accessManager" name="accessManager" />
-              <p></p>
-              <label> Access Manager</label>
-            </div>
-          </li>
-
-          <li className={styles.major_li}>
-            <input type="checkbox" id="card" name="card" />
-            <label> .CARD</label>
-            <div className={styles.minor_div}>
-              <input
-                type="checkbox"
-                id="cardManagement"
-                name="cardManagement"
-              />
-              <p></p>
-              <label> Card Management</label>
-            </div>
-          </li>
-
-          <li className={styles.major_li}>
-            <input type="checkbox" id="certify" name="certify" />
-            <label> .СERTIFY</label>
-          </li>
-        </div>
+        <ul>
+          {users.map((el, i) => (
+            <li key={i}>
+              <input type="checkbox" />
+              <label>{el.address.suite}</label>
+              <div>
+                <input type="checkbox" />
+                <p></p>
+                <label>{el.address.street}</label>
+              </div>
+            </li>
+          ))}
+        </ul>
         <div className={styles.selected_roles}></div>
       </div>
     </div>

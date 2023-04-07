@@ -29,7 +29,7 @@ const Form = () => {
   const targetRef = useRef(null);
 
   const handleScroll = useCallback(() => {
-    userRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+    userRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }, []);
 
   const handleIntersection = useCallback((entries) => {
@@ -48,6 +48,13 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (password.value !== confirmPassword.value) {
+      setErrors(
+        "The password you entered does not match with the confirmation"
+      );
+    } else setErrors("");
+
     console.log(
       surName,
       firstName,
@@ -59,11 +66,6 @@ const Form = () => {
       temporaryPassword,
       errors
     );
-    return password !== confirmPassword
-      ? setErrors(
-          "The password you entered does not match with the confirmation"
-        )
-      : setErrors("");
   };
 
   useEffect(() => {
@@ -125,7 +127,7 @@ const Form = () => {
         <div
           ref={targetRef}
           className={styles.static_header}
-          onClick={() => handleIsClicked}
+          onClick={handleIsClicked}
         >
           <div className={isScrolledToTop || !isClicked ? "isActive" : ""}>
             User Information
@@ -235,7 +237,7 @@ const Form = () => {
           </div>
 
           <div className={styles.usrol_container} ref={userRef}>
-            <UserRoles />
+            <UserRoles userRef={userRef} />
           </div>
 
           <div className={styles.buttons_footer}>
