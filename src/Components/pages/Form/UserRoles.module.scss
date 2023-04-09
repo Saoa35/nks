@@ -20,53 +20,58 @@
   .roles_main {
     display: flex;
 
-    ul {
+    .roles_list {
       width: 50%;
-      list-style: none;
-      margin-left: 0;
-      padding-left: 0;
 
-      li {
-        margin-left: 15px;
-        margin-bottom: 20px;
+      ul {
+        width: 50%;
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
 
-        input {
-          width: 2.5vh;
-          height: 2.5vh;
-          margin: 0;
-          margin-right: 8px;
-          cursor: pointer;
-        }
-
-        label {
-          margin: 0;
-        }
-
-        div {
-          margin-left: 20px;
-          display: flex;
-          align-items: center;
+        li {
+          margin-left: 15px;
+          margin-bottom: 20px;
 
           input {
+            width: 15px;
+            height: 15px;
             margin: 0;
-            margin-right: 10px;
+            margin-right: 8px;
+            cursor: pointer;
           }
 
           label {
-            display: flex;
             margin: 0;
-            padding: 0;
+          }
 
-            :first-child {
-              width: 30px;
-              height: 30px;
-              border-radius: 25px;
-              background-color: #bfe4e8;
+          div {
+            margin-left: 25%;
+            display: flex;
+            align-items: center;
+
+            input {
+              margin: 0;
               margin-right: 10px;
             }
 
-            :last-child {
-              font-weight: 600;
+            label {
+              display: flex;
+              margin: 0;
+              padding: 0;
+
+              :first-child {
+                width: 27px;
+                height: 27px;
+                border-radius: 13px;
+                background-color: #bfe4e8;
+                margin-right: 10px;
+              }
+
+              :last-child {
+                width: max-content;
+                font-weight: 600;
+              }
             }
           }
         }
@@ -75,6 +80,15 @@
 
     .selected_roles {
       border-left: 2px solid rgb(222, 219, 219);
+      width: 48%;
+
+      ul {
+        list-style: none;
+
+        li {
+          margin: 10px 0;
+        }
+      }
     }
   }
 }

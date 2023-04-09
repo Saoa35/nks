@@ -22,11 +22,20 @@ const Form = () => {
   const [errors, setErrors] = useState("");
   const [temporaryPassword, setTemporaryPassword] = useState(false);
 
+  const [selectedRoles, setSelectedRoles] = useState([]);
+
   const [isClicked, setIsClicked] = useState(false);
   const [isScrolledToTop, setIsScrolledToTop] = useState(false);
 
   const userRef = useRef(null);
   const targetRef = useRef(null);
+
+  const handleShowSelectedRoles = () => {
+    const selectedRolesText = selectedRoles.map((elem, ind) => (
+      <li key={ind}>{elem}</li>
+    ));
+    return <ul>{selectedRolesText}</ul>;
+  };
 
   const handleScroll = useCallback(() => {
     userRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -55,17 +64,19 @@ const Form = () => {
       );
     } else setErrors("");
 
-    console.log(
-      surName,
-      firstName,
-      userName,
-      email,
-      realm,
-      password,
-      confirmPassword,
-      temporaryPassword,
-      errors
-    );
+    // console.log(
+    //   surName,
+    //   firstName,
+    //   userName,
+    //   email,
+    //   realm,
+    //   password,
+    //   confirmPassword,
+    //   temporaryPassword,
+    //   errors
+    // );
+
+    console.log(selectedRoles);
   };
 
   useEffect(() => {
@@ -134,7 +145,7 @@ const Form = () => {
           </div>
           <div></div>
           <div className={isClicked ? "isActive" : ""} onClick={handleScroll}>
-            Applications, Systems & User Roles
+            Applications, Systems and User Roles
           </div>
         </div>
         <div className={styles.create_header}>
@@ -237,12 +248,21 @@ const Form = () => {
           </div>
 
           <div className={styles.usrol_container} ref={userRef}>
-            <UserRoles userRef={userRef} />
+            <UserRoles
+              selectedRoles={selectedRoles}
+              setSelectedRoles={setSelectedRoles}
+              handleShowSelectedRoles={handleShowSelectedRoles}
+            />
           </div>
 
           <div className={styles.buttons_footer}>
             <button className={styles.cansel_button}>Cancel</button>
-            <button className={styles.save_button}>Save</button>
+            <button
+              className={styles.save_button}
+              onClick={handleShowSelectedRoles}
+            >
+              Save
+            </button>
           </div>
         </form>
       </div>
