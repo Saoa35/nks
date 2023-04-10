@@ -31,10 +31,10 @@ const Form = () => {
   const targetRef = useRef(null);
 
   const handleShowSelectedRoles = () => {
-    const selectedRolesText = selectedRoles.map((elem, ind) => (
+    const selectedRolesList = selectedRoles.map((elem, ind) => (
       <li key={ind}>{elem}</li>
     ));
-    return <ul>{selectedRolesText}</ul>;
+    return <ul>{selectedRolesList}</ul>;
   };
 
   const handleScroll = useCallback(() => {
@@ -55,29 +55,43 @@ const Form = () => {
     setTemporaryPassword(!temporaryPassword);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
 
-    if (password.value !== confirmPassword.value) {
-      setErrors(
-        "The password you entered does not match with the confirmation"
+      if (password.value !== confirmPassword.value) {
+        setErrors(
+          "The password you entered does not match with the confirmation"
+        );
+      } else setErrors("");
+
+      console.log(
+        surName,
+        firstName,
+        userName,
+        email,
+        realm,
+        password,
+        confirmPassword,
+        temporaryPassword,
+        errors
       );
-    } else setErrors("");
 
-    // console.log(
-    //   surName,
-    //   firstName,
-    //   userName,
-    //   email,
-    //   realm,
-    //   password,
-    //   confirmPassword,
-    //   temporaryPassword,
-    //   errors
-    // );
-
-    console.log(selectedRoles);
-  };
+      console.log(selectedRoles);
+    },
+    [
+      surName,
+      firstName,
+      userName,
+      email,
+      realm,
+      password,
+      confirmPassword,
+      temporaryPassword,
+      errors,
+      selectedRoles,
+    ]
+  );
 
   useEffect(() => {
     const observer = new IntersectionObserver(handleIntersection);
