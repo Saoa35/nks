@@ -204,7 +204,7 @@ const Form = () => {
                 />
               </g>
             </svg>
-            <span>Bild</span>
+            <span>Foto</span>
           </p>
         </div>
         <form onSubmit={handleSubmit}>
