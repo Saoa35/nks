@@ -1,0 +1,47 @@
+.main_wrapper {
+  display: flex;
+
+  .users_list {
+    background-color: white;
+    width: 30%;
+
+    .search_block {
+      display: flex;
+      justify-content: flex-start;
+      padding: 15px 5px;
+
+      input {
+        height: 30px;
+        width: 70%;
+        border: rgb(193, 184, 184) solid 1px;
+        border-radius: 5px;
+        margin-left: 15px;
+        padding: 15px;
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 10px;
+
+      li {
+        padding: 10px 0 10px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        border-top: #ededed solid 1px;
+
+        .user_container {
+          display: flex;
+          align-items: center;
+        }
+
+        .popup {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
