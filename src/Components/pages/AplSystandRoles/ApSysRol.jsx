@@ -16,7 +16,7 @@ export const ApSysRol = () => {
               type="text"
               // onChange={handleChange}
               // value={search}
-              placeholder="Search"
+              placeholder="Search..."
             />
             <div className="popup_wrapper">
               {/* <div className="button_wrapper" onClick={handleClick}> */}
