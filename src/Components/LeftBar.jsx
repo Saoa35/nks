@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./LeftBar.module.scss";
 
 export const LeftBar = memo(({ changeStateToFalse }) => {
-  // console.log("LeftBar rerander");
+  console.log("LeftBar rerander");
 
   return (
     <aside>
