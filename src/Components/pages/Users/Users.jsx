@@ -11,6 +11,7 @@ export const Users = memo(() => {
 
   const { users, firstLetters, isOpen, handleClick, isPicked, setIsPicked } =
     useContext(UsersContext);
+
   const [search, setSearch] = useState("");
   const [userName, setUserName] = useState("");
 

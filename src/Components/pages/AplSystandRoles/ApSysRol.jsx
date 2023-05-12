@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import styles from "./ApSysRol.module.scss";
+import { UsersContext } from "../../App/App";
 
 export const ApSysRol = () => {
   console.log("ApSysRol rerender");
+
+  const { users, firstLetters, isOpen, handleClick, isPicked, setIsPicked } =
+    useContext(UsersContext);
 
   return (
     <div className="users_wrapper">
